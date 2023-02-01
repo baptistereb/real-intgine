@@ -18,7 +18,9 @@ int main(int argc, char** argv)
     glutInitWindowSize(300, 200);
     glutInitWindowPosition(100, 100);
     glutCreateWindow("REAL INTGINE !!!");
+    
     glutDisplayFunc(affiche);
+
     glutMainLoop();
     return 0;
 }

@@ -12,7 +12,7 @@ sudo apt-get install libglew-dev
 ```
 ### compiler :
 ```bash
-g++ main.cpp -o exec -lglut -lGLU -lGL
+g++ main.cpp -o build/exec -lglut -lGLU -lGL
 ```
 
 ### Eventuellement faire un build system si vous êtes sous sublime-text pour compiler et exécuter directement avec CTRL+B
