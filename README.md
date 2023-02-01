@@ -19,6 +19,9 @@ g++ main.cpp -o build/exec -lglut -lGLU -lGL
 ### Eventuellement faire un build system si vous êtes sous sublime-text pour compiler et exécuter directement avec CTRL+B
 ```json
 {
-	"shell_cmd": "g++ /home/rubiks/Documents/dev/real-intgine/main.cpp -o /home/rubiks/Documents/dev/real-intgine/build/exec -lglut -lGLU -lGL; /home/rubiks/Documents/dev/real-intgine/build/exec"
+	"shell_cmd": "g++ ./real-intgine/main.cpp -o ./real-intgine/build/exec -lglut -lGLU -lGL; ./real-intgine/build/exec"
 }
 ```
+
+ # dev on windows
+ ###
