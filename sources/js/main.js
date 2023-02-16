@@ -24,14 +24,16 @@ function Project(dx, dy, dz, ex, ey, ez) {
 	return [ez*dx/dz+ex, ez*dy/dz+ey]
 }
 
-
-ctx.beginPath();
+ctx.strokeStyle = "Red";
 ctx.lineWidth = 5;
+ctx.beginPath();
 
-tp = TransformedPoint(10, 10, 10, 0, 0, 10, 0, 10, 10)
+tp = TransformedPoint(10, 2, 10, 1, 5, 10, 5, 5, 5)
 ctx.moveTo(Project(tp[0], tp[1], tp[2], 1, 1, 10)[0], Project(tp[0], tp[1], tp[2], 1, 1, 10)[1]);
 	
-tp = TransformedPoint(40, 40, 40, 0, 0, 0)
+tp = TransformedPoint(2, 5, 1, 8, 7, 2,2,5,3);
+console.log(TransformedPoint(2,5,1,8,7,2,2,5,3));
 ctx.lineTo(Project(tp[0], tp[1], tp[2], 1, 1, 0)[0], Project(tp[0], tp[1], tp[2], 1, 1, 0)[1]);
-ctx.strokeStyle = "Red";
+console.log(Project(tp[0], tp[1], tp[2], 1, 1, 0)[0], Project(tp[0], tp[1], tp[2], 1, 1, 0)[1]);
 ctx.stroke();
+ctx.closePath();
