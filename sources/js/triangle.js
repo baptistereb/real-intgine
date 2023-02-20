@@ -1,5 +1,5 @@
 function DrawTriangle(co1, co2, co3, color) {
-	ctx.strokeStyle = color;
+	ctx.fillStyle = color;
 	ctx.lineWidth = 5;
 	ctx.beginPath();
 	point1 = Project(co1[0], co1[1], co1[2])
