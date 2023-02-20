@@ -21,16 +21,16 @@ function mainloop() {
 function keyPush(evt) {
     switch(evt.keyCode) {
         case 37: // <-
-        	camera_angle.x = camera_angle.x - 10
+        	camera_angle.x = camera_angle.x - 1
             break;
         case 38: // haut
-        	camera_angle.y = camera_angle.y + 10
+        	camera_angle.y = camera_angle.y + 1
             break;
         case 39: // ->
-        	camera_angle.x = camera_angle.x + 10
+        	camera_angle.x = camera_angle.x + 1
             break;
         case 40: // bas
-        	camera_angle.y = camera_angle.y - 10
+        	camera_angle.y = camera_angle.y - 1
             break;
     }
 }
