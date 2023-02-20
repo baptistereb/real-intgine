@@ -4,13 +4,13 @@ var camera = {
 	z: 0
 }
 
-var ecran = {
+var camera_angle = {
 	x: 0,
 	y: 0,
 	z: 0
 }
 
-var base = {
+var display = {
 	x: 0,
 	y: 0,
 	z: 0
@@ -22,14 +22,14 @@ function SetCamera(x, y, z) {
 	camera.z = z
 }
 
-function SetEcran(x, y, z) {
-	ecran.x = x
-	ecran.y = y
-	ecran.z = z
+function SetCameraAngle(x, y, z) {
+	camera_angle.x = x
+	camera_angle.y = y
+	camera_angle.z = z
 }
 
-function SetBase(x, y, z) {
-	base.x = x
-	base.y = y
-	base.z = z
+function SetDisplay(x, y, z) {
+	display.x = x
+	display.y = y
+	display.z = z
 }

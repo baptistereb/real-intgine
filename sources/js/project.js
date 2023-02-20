@@ -1,12 +1,12 @@
 
-//s point a transfo
-function TransformedPoint(sx, sy, sz) {
-	cx = camera.x
-	cy = camera.y
-	cz = camera.z
-	ax = ecran.x
-	ay = ecran.y
-	az = ecran.z
+//a point à transfo
+function TransformedPoint(ax, ay, az) {
+	cx = Math.cos(camera_angle.x)
+	cy = Math.cos(camera_angle.y)
+	cz = Math.cos(camera_angle.z)
+	sx = Math.sin(camera_angle.x)
+	sy = Math.sin(camera_angle.y)
+	sz = Math.sin(camera_angle.z)
 	dx = cy*(sz*(ay-cy)+cz*(ax-cx))-sy*(az-cz)
 	dy = sx*(cy*(az-cz)+sy*(sz*(ay-cy)+cz*(ax-cx)))+cx*(cz*(ay-cy)-sz*(ax-cx))
 	dz = cx*(cy*(az-cz)+sy*(sz*(ay-cy)+cz*(ax-cx)))-sx*(cz*(ay-cy)-sz*(ax-cx))
@@ -15,9 +15,9 @@ function TransformedPoint(sx, sy, sz) {
 }
 
 function JustProjectPoint(dx, dy, dz) {
-	ex = base.x
-	ey = base.y
-	ez = base.z
+	ex = display.x
+	ey = display.y
+	ez = display.z
 	return [ez*dx/dz+ex, ez*dy/dz+ey]
 }
 
