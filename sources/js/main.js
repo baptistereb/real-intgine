@@ -7,7 +7,7 @@ SetDisplay(300, 300, 300)
 
 
 document.addEventListener("keydown",keyPush);
-setInterval(mainloop,1000/15);
+setInterval(mainloop,1000/60);
 
 i=0
 function mainloop() {
