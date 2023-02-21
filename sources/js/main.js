@@ -7,7 +7,7 @@ SetDisplay(300, 300, 300)
 
 
 document.addEventListener("keydown",keyPush);
-setInterval(mainloop,1000/15);
+setInterval(mainloop,1000/60);
 
 i=0
 function mainloop() {
@@ -65,22 +65,22 @@ function keyPush(evt) {
      
 
         case 87: // w
-        	display.x = display.x - 0.01
+        	display.x = display.x - 10
             break;
         case 88: // x
-        	display.x = display.x + 0.01
+        	display.x = display.x + 10
             break;
         case 67: // c
-        	display.y = display.y - 0.01
+        	display.y = display.y - 10
             break;
         case 86: // v
-        	display.y = display.y + 0.01
+        	display.y = display.y + 10
             break;
         case 66: // b
-        	display.z = display.z - 0.01
+        	display.z = display.z - 10
             break;
         case 78: // n
-        	display.z = display.z + 0.01
+        	display.z = display.z + 10
             break;
     }
 }
