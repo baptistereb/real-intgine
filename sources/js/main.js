@@ -14,7 +14,6 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	SetCamera(0, 0, 0)
 	DrawTriangle([10, 2, 10], [2, 5, 1], [50, 0, 0], "red") 
 	console.log( camera_angle);
 	console.log( camera);
