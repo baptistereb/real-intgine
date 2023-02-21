@@ -40,10 +40,6 @@ function keyPush(evt) {
         case 18: // alt
         	camera_angle.z = camera_angle.z - 0.01
             break;
-       
-
-
-      
 
         case 81: // q
         	camera.x = camera.x - 1
@@ -63,7 +59,6 @@ function keyPush(evt) {
         case 72: // h
         	camera.z = camera.z + 1
             break;
-
      
 
         case 87: // w
