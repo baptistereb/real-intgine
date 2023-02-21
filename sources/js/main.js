@@ -7,7 +7,7 @@ SetDisplay(300, 300, 300)
 
 
 document.addEventListener("keydown",keyPush);
-setInterval(mainloop,1000/60);
+setInterval(mainloop,1000/15);
 
 i=0
 function mainloop() {
@@ -31,6 +31,56 @@ function keyPush(evt) {
             break;
         case 40: // bas
         	camera_angle.y = camera_angle.y - 0.01
+            break;
+        case 13: // entrée
+        	camera_angle.z = camera_angle.z + 0.01
+            break;
+        case 18: // alt
+        	camera_angle.z = camera_angle.z - 0.01
+            break;
+       
+
+
+      
+
+        case 81: // q
+        	camera.x = camera.x - 0.01
+            break;
+        case 83: // s
+        	camera.x = camera.x + 0.01
+            break;
+        case 68: // d
+        	camera.y = camera.y - 0.01
+            break;
+        case 70: // f
+        	camera.y = camera.y + 0.01
+            break;
+        case 71: // g
+        	camera.z = camera.z - 0.01
+            break;
+        case 72: // h
+        	camera.z = camera.z + 0.01
+            break;
+
+     
+
+        case 87: // w
+        	display.x = display.x - 0.01
+            break;
+        case 88: // x
+        	display.x = display.x + 0.01
+            break;
+        case 67: // c
+        	display.y = display.y - 0.01
+            break;
+        case 86: // v
+        	display.y = display.y + 0.01
+            break;
+        case 66: // b
+        	display.z = display.z - 0.01
+            break;
+        case 78: // n
+        	display.z = display.z + 0.01
             break;
     }
 }
