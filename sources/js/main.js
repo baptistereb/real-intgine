@@ -15,7 +15,10 @@ function mainloop() {
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 	SetCamera(0, 0, 0)
-	DrawTriangle([10, 2, 10], [2, 5, 1], [50, 0, 0], "red")
+	DrawTriangle([10, 2, 10], [2, 5, 1], [50, 0, 0], "red") 
+	console.log( camera_angle);
+	console.log( camera);
+	console.log ( display);
 }
 
 function keyPush(evt) {
@@ -39,42 +42,48 @@ function keyPush(evt) {
         	camera_angle.z = camera_angle.z - 0.01
             break;
        
+
+
+      
+
         case 81: // q
-        	camera.x = camera.x - 0.01
+        	camera.x = camera.x - 1
             break;
         case 83: // s
-        	camera.x = camera.x + 0.01
+        	camera.x = camera.x + 1
             break;
         case 68: // d
-        	camera.y = camera.y - 0.01
+        	camera.y = camera.y - 1
             break;
         case 70: // f
-        	camera.y = camera.y + 0.01
+        	camera.y = camera.y + 1
             break;
         case 71: // g
-        	camera.z = camera.z - 0.01
+        	camera.z = camera.z - 1
             break;
         case 72: // h
-        	camera.z = camera.z + 0.01
+        	camera.z = camera.z + 1
             break;
 
+     
+
         case 87: // w
-        	display.x = display.x - 10
+        	display.x = display.x - 1
             break;
         case 88: // x
-        	display.x = display.x + 10
+        	display.x = display.x + 1
             break;
         case 67: // c
-        	display.y = display.y - 10
+        	display.y = display.y - 1
             break;
         case 86: // v
-        	display.y = display.y + 10
+        	display.y = display.y + 1
             break;
         case 66: // b
-        	display.z = display.z - 10
+        	display.z = display.z - 1
             break;
         case 78: // n
-        	display.z = display.z + 10
+        	display.z = display.z + 1
             break;
     }
 }
