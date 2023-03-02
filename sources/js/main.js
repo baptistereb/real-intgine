@@ -14,7 +14,11 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	DrawTriangle([10, 2, 10], [2, 5, 1], [50, 0, 0], "red") 
+	DrawTriangle([100,100, 0], [0, 0, 0], [200, 0, 0], "blue") 
+	DrawTriangle([50, 50, 50], [100,100, 0],[200, 0, 0], "pink") 
+	DrawTriangle([50, 50, 50], [0,0, 0], [100, 100, 0], "black") 
+	DrawTriangle([50, 50, 50], [0,0,0], [200, 0, 0], "red") 
+	
 	console.log( camera_angle);
 	console.log( camera);
 	console.log ( display);
@@ -34,10 +38,10 @@ function keyPush(evt) {
         case 40: // bas
         	camera_angle.y = camera_angle.y - 0.01
             break;
-        case 13: // entrée
+        case 90: // z
         	camera_angle.z = camera_angle.z + 0.01
             break;
-        case 18: // alt
+        case 65: // a
         	camera_angle.z = camera_angle.z - 0.01
             break;
 
