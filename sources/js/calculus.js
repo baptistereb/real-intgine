@@ -20,17 +20,17 @@ function crossProduct(u, v) {
 
 
 // retourne le vecteur normal au triangle
-function computeTriangleNormal(triangle) {
+function computeTriangleNormal(som1,som2,som3) {
   const u = [
-    triangle[3] - triangle[0],
-    triangle[4] - triangle[1],
-    triangle[5] - triangle[2],
+    som2[0] - som1[0],
+    som2[1] - som1[1],
+    som2[2] - som1[2],
   ];
 
   const v = [
-    triangle[6] - triangle[0],
-    triangle[7] - triangle[1],
-    triangle[8] - triangle[2],
+    som3[6] - som1[0],
+    som3[7] - som1[1],
+    som3[8] - som1[2],
   ];
 
   const normal = crossProduct(u, v);

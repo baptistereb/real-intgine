@@ -14,14 +14,11 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	DrawTriangle([100,100, 0], [0, 0, 0], [200, 0, 0], "blue") 
-	DrawTriangle([50, 50, 50], [100,100, 0],[200, 0, 0], "pink") 
-	DrawTriangle([50, 50, 50], [0,0, 0], [100, 100, 0], "black") 
-	DrawTriangle([50, 50, 50], [0,0,0], [200, 0, 0], "red") 
+	drawPyramide([100,100, 0], [0, 0, 0], [200, 0, 0],[100,100,0], "blue", "red", "pink", "black"); 
 	
-	console.log( camera_angle);
-	console.log( camera);
-	console.log ( display);
+	//console.log( camera_angle);
+	//console.log( camera);
+	//console.log ( display);
 }
 
 function keyPush(evt) {

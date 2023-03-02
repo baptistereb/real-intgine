@@ -1,4 +1,9 @@
-function computeVisibleFaces(triangle, cameraPosition, cameraAngle, screenAngle) {
+
+//reprendre la partie var cameraposition, cameraAngle,screenAngle!!
+
+
+
+function computeVisibleFaces(som1,som2,som3, cameraPosition, cameraAngle, screenAngle) {
   // Convert angles to radians
   const cameraAngleRadians = cameraAngle * Math.PI / 180;
   const screenAngleRadians = screenAngle * Math.PI / 180;
@@ -18,13 +23,13 @@ function computeVisibleFaces(triangle, cameraPosition, cameraAngle, screenAngle)
   ];
 
   // Calculate triangle normal vector
-  const triangleNormal = computeTriangleNormal(triangle);
+  const triangleNormal = computeTriangleNormal(som1,som2,som3);
 
   // Calculate vector from camera to triangle
   const cameraToTriangle = [
-    triangle[0] - cameraPosition[0],
-    triangle[1] - cameraPosition[1],
-    triangle[2] - cameraPosition[2],
+    som1[0] - cameraPosition[0],
+    som1[1] - cameraPosition[1],
+    som1[2] - cameraPosition[2],
   ];
 
   // Calculate angle between camera direction and camera-to-triangle vector
