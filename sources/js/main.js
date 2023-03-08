@@ -14,16 +14,18 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	DrawTriangle([10, 2, 10], [2, 5, 1], [50, 0, 0], "red")
+    
+	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black"); 
+	//DrawTriangle([10, 2, 10], [2, 5, 1],[50,0,0], "red");
+	console.log( camera_angle);
+	console.log( camera);
+	console.log ( display);
 	/*DrawSquare([10, 0, 0], [10, 2, 0], [10, 2, 2], [10, 0, 2], "blue")
 	DrawSquare([12, 0, 0], [12, 2, 0], [12, 2, 2], [12, 0, 2], "green")
 	DrawSquare([10, 0, 0], [12, 0, 0], [12, 0, 2], [10, 0, 2], "red")
 	DrawSquare([10, 2, 0], [12, 2, 0], [12, 2, 2], [10, 2, 2], "yellow")
 	DrawSquare([12, 0, 0], [10, 0, 0], [10, 0, 2], [12, 0, 2], "orange")
 	DrawSquare([12, 2, 0], [10, 2, 0], [10, 2, 2], [12, 2, 2], "pink")*/
-	console.log(camera_angle);
-	console.log(camera);
-	console.log(display);
 }
 
 function keyPush(evt) {
@@ -40,11 +42,11 @@ function keyPush(evt) {
         case 40: // bas
         	camera_angle.y = camera_angle.y - 0.05
             break;
-        case 13: // entrée
-        	camera_angle.z = camera_angle.z + 0.05
+        case 90: // z
+        	camera_angle.z = camera_angle.z + 0.01
             break;
-        case 18: // alt
-        	camera_angle.z = camera_angle.z - 0.05
+        case 65: // a
+        	camera_angle.z = camera_angle.z - 0.01
             break;
 
         case 81: // q
