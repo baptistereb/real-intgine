@@ -37,3 +37,8 @@ function TriangleToNormal(som1,som2,som3) {
 
   return normal;
 }
+
+//normalise un vecteur
+function Normalise(u){
+  return [u[0]/vectorLength(u), u[1]/vectorLength(u), u[2]/vectorLength(u)]
+}
