@@ -17,9 +17,9 @@ function mainloop() {
     
 	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 	//DrawTriangle([10, 2, 10], [2, 5, 1],[50,0,0], "red");
-	console.log( camera_angle);
-	console.log( camera);
-	console.log ( display);
+	//console.log( camera_angle);
+	//console.log( camera);
+	//console.log ( display);
 	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
 	DrawSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
 	DrawSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
