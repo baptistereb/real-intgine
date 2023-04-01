@@ -7,9 +7,6 @@ function TransformedPoint(ax, ay, az) {
 	sx = Math.sin(camera_angle.x)
 	sy = Math.sin(camera_angle.y)
 	sz = Math.sin(camera_angle.z)
-	//camx = camera.x
-	//camy = camera.y
-	//camz = camera.z
 	mat1 = [
 		[1, 0, 0],
 		[0, cx, sx],
