@@ -5,7 +5,7 @@ SetCamera(0, 0, 0)
 SetCameraAngle(5, 5, 5)
 SetDisplay(300, 300, 300)
 
-
+    
 document.addEventListener("keydown",keyPush);
 setInterval(mainloop,1000/60);
 
@@ -55,22 +55,22 @@ function keyPush(evt) {
             break;
 
         case 81: // q
-        	camera.x = camera.x - 10
+        	camera.x = camera.x - 1
             break;
         case 83: // s
-        	camera.x = camera.x + 10
+        	camera.x = camera.x + 1
             break;
         case 68: // d
-        	camera.y = camera.y - 10
+        	camera.y = camera.y - 1
             break;
         case 70: // f
-        	camera.y = camera.y + 10
+        	camera.y = camera.y + 1
             break;
         case 71: // g
-        	camera.z = camera.z - 10
+        	camera.z = camera.z - 1
             break;
         case 72: // h
-        	camera.z = camera.z + 10
+        	camera.z = camera.z + 1
             break;
      
 
