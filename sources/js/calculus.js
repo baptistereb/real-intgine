@@ -1,3 +1,19 @@
+//multiplication de 2 matrices matrices
+function multMatrix(m1, m2) {
+    var result = [];
+    for (var i = 0; i < m1.length; i++) {
+        result[i] = [];
+        for (var j = 0; j < m2[0].length; j++) {
+            var sum = 0;
+            for (var k = 0; k < m1[0].length; k++) {
+                sum += m1[i][k] * m2[k][j];
+            }
+            result[i][j] = sum;
+        }
+    }
+    return result;
+}
+
 //produit scalaire 
 function dotProduct(u, v) {
   return u[0] * v[0] + u[1] * v[1] + u[2] * v[2];
