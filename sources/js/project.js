@@ -43,5 +43,10 @@ function JustProjectPoint(dx, dy, dz) {
 
 function Project(x, y, z) {
 	tp = TransformedPoint(x, y, z)
-	return JustProjectPoint(tp[0], tp[1], tp[2])
+	visible_point = true
+	if(tp[2]<0) {
+		visible_point = false
+	}
+	projection = JustProjectPoint(tp[0], tp[1], tp[2])
+	return [projection[0], projection[1], visible_point]
 }
