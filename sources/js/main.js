@@ -24,7 +24,7 @@ function mainloop() {
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
 
-    console.log(faceOrder(camera, display, [[100,40,45], [0,1,1], [3,4,5]]))
+    //console.log(faceOrder(camera, display, [[100,40,45], [0,1,1], [3,4,5]]))
 
     
 }

@@ -26,7 +26,7 @@ function TransformedPoint(ax, ay, az) {
 		[ay-camera.y, 0, 0],
 		[az-camera.z, 0, 0]
 	]
-	console.log("test")
+
 	d = multMatrix(multMatrix(multMatrix(mat1, mat2), mat3), vect)
 	
 	vectd = [d[0][0], d[1][0], d[2][0]] 
