@@ -7,14 +7,34 @@ function TransformedPoint(ax, ay, az) {
 	sx = Math.sin(camera_angle.x)
 	sy = Math.sin(camera_angle.y)
 	sz = Math.sin(camera_angle.z)
-	camx = camera.x
-	camy = camera.y
-	camz = camera.z
-	dx = cy*(sz*(ay-camy)+cz*(ax-camx))-sy*(az-camz)
-	dy = sx*(cy*(az-camz)+sy*(sz*(ay-camy)+cz*(ax-camx)))+cx*(cz*(ay-camy)-sz*(ax-camx))
-	dz = cx*(cy*(az-camz)+sy*(sz*(ay-camy)+cz*(ax-camx)))-sx*(cz*(ay-camy)-sz*(ax-camx))
+	//camx = camera.x
+	//camy = camera.y
+	//camz = camera.z
+	mat1 = [
+		[1, 0, 0],
+		[0, cx, sx],
+		[0, (-1)*sx, cx]
+	]
+	mat2 = [
+		[cy, 0, (-1)*sy],
+		[0, 1, 0],
+		[sy, 0, cy]
+	]
+	mat3 = [
+		[cz, sz, 0],
+		[(-1)*sz, cx, 0],
+		[0, 0, 1]
+	]
+	vect = [[ax-camera.x, 0, 0],
+		[ay-camera.y, 0, 0],
+		[az-camera.z, 0, 0]
+	]
+	console.log("test")
+	d = multMatrix(multMatrix(multMatrix(mat1, mat2), mat3), vect)
+	
+	vectd = [d[0][0], d[1][0], d[2][0]] 
 
-	return [dx, dy, dz]
+	return vectd
 }
 
 function JustProjectPoint(dx, dy, dz) {
