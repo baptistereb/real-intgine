@@ -38,20 +38,23 @@ function keyPush(evt) {
         case 37: // <-
         	camera_angle.x = camera_angle.x - 0.05
             break;
-        case 38: // haut
+
+        //  angle phi dans les angles d'Euler
+        /*case 90: // z
         	camera_angle.y = camera_angle.y + 0.05
             break;
+        case 65: // a
+            camera_angle.y = camera_angle.y - 0.05
+            break;*/ 
+
         case 39: // ->
         	camera_angle.x = camera_angle.x + 0.05
             break;
-        case 40: // bas
-        	camera_angle.y = camera_angle.y - 0.05
+        case 38: // z haut
+        	camera_angle.z = camera_angle.z + 0.05
             break;
-        case 90: // z
-        	camera_angle.z = camera_angle.z + 0.01
-            break;
-        case 65: // a
-        	camera_angle.z = camera_angle.z - 0.01
+        case 40: // a bas
+        	camera_angle.z = camera_angle.z - 0.05
             break;
 
         case 81: // q
