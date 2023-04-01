@@ -6,7 +6,7 @@ var camera = {
 
 var camera_angle = {
 	x: 0,
-	y: 0,
+	y: 0, //  angle phi dans les angles d'Euler => laisser constant à 0
 	z: 0
 }
 
