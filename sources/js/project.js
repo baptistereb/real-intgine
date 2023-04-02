@@ -19,7 +19,7 @@ function TransformedPoint(ax, ay, az) {
 	]
 	mat3 = [
 		[cz, sz, 0],
-		[(-1)*sz, cx, 0],
+		[(-1)*sz, cz, 0],
 		[0, 0, 1]
 	]
 	vect = [[ax-camera.x, 0, 0],
