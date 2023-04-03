@@ -30,7 +30,7 @@ function mainloop() {
     if (camera_angle.x<0) {
         camera_angle.x=0
     }
-    console.log(camera_angle)
+    //console.log(camera_angle)
 }
 
 function keyPush(evt) {
