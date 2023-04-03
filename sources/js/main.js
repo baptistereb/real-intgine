@@ -2,7 +2,7 @@ var canvas = document.getElementById("Canvas");
 var ctx = canvas.getContext("2d");
 
 SetCamera(0, 0, 0)
-SetCameraAngle(5, 5, 5)
+SetCameraAngle(1.4, 0, 2)
 SetDisplay(300, 300, 300)
 
     
@@ -14,7 +14,6 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    console.log(camera_angle)
 	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
 	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
@@ -25,13 +24,13 @@ function mainloop() {
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
 
     
-    if (camera_angle.x > 180) {
-        camera_angle.x =180
+    if (camera_angle.x > 3.14) {
+        camera_angle.x = 3.14
     }
     if (camera_angle.x<0) {
         camera_angle.x=0
     }
-    
+    console.log(camera_angle)
 }
 
 function keyPush(evt) {
