@@ -31,27 +31,27 @@ function mainloop() {
 
 function keyPush(evt) {
     switch(evt.keyCode) {
-        case 37: // <-
+        case 40: // bas
         	camera_angle.x = camera_angle.x - 0.05
+            break;
+        case 38: // haut
+        	camera_angle.x = camera_angle.x + 0.05
+            break;
+        case 37: // droite
+        	camera_angle.z = camera_angle.z + 0.05
+            break;
+        case 39: // gauche
+        	camera_angle.z = camera_angle.z - 0.05
             break;
 
         //  angle phi dans les angles d'Euler
         /*case 90: // z
-        	camera_angle.y = camera_angle.y + 0.05
+            camera_angle.y = camera_angle.y + 0.05
             break;
         case 65: // a
             camera_angle.y = camera_angle.y - 0.05
             break;*/ 
 
-        case 39: // ->
-        	camera_angle.x = camera_angle.x + 0.05
-            break;
-        case 38: // z haut
-        	camera_angle.z = camera_angle.z + 0.05
-            break;
-        case 40: // a bas
-        	camera_angle.z = camera_angle.z - 0.05
-            break;
 
         case 81: // q
         	camera.x = camera.x - 1
