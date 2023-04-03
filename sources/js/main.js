@@ -41,10 +41,10 @@ function keyPush(evt) {
         case 38: // haut
         	camera_angle.x = camera_angle.x + 0.05
             break;
-        case 37: // droite
+        case 39: // droite
         	camera_angle.z = camera_angle.z + 0.05
             break;
-        case 39: // gauche
+        case 37: // gauche
         	camera_angle.z = camera_angle.z - 0.05
             break;
         
