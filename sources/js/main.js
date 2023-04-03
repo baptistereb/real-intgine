@@ -14,7 +14,7 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    
+    console.log(camera_angle)
 	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
 	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
@@ -24,8 +24,13 @@ function mainloop() {
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
 
-    //console.log(faceOrder(camera, display, [[100,40,45], [0,1,1], [3,4,5]]))
-
+    
+    if (camera_angle.x > 180) {
+        camera_angle.x =180
+    }
+    if (camera_angle.x<0) {
+        camera_angle.x=0
+    }
     
 }
 
@@ -43,7 +48,7 @@ function keyPush(evt) {
         case 39: // gauche
         	camera_angle.z = camera_angle.z - 0.05
             break;
-
+        
         //  angle phi dans les angles d'Euler
         /*case 90: // z
             camera_angle.y = camera_angle.y + 0.05
