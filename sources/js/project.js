@@ -12,11 +12,11 @@ function TransformedPoint(ax, ay, az) {
 		[0, cx, sx],
 		[0, (-1)*sx, cx]
 	]
-	mat2 = [
+	/*mat2 = [
 		[cy, 0, (-1)*sy],
 		[0, 1, 0],
 		[sy, 0, cy]
-	]
+	]*/
 	mat3 = [
 		[cz, sz, 0],
 		[(-1)*sz, cz, 0],
@@ -27,7 +27,8 @@ function TransformedPoint(ax, ay, az) {
 		[az-camera.z, 0, 0]
 	]
 
-	d = multMatrix(multMatrix(multMatrix(mat1, mat2), mat3), vect)
+	//d = multMatrix(multMatrix(multMatrix(mat1, mat2), mat3), vect)
+	d = multMatrix(multMatrix(mat1, mat3), vect)
 	
 	vectd = [d[0][0], d[1][0], d[2][0]] 
 
