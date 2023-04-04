@@ -14,7 +14,7 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
+	/*DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
 	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
 	DrawSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
@@ -22,7 +22,16 @@ function mainloop() {
 	DrawSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "yellow")
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
+*/
 
+    col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
+    if(typeof usermap != "undefined") {
+        for(let i = 0; i < usermap[1].length; i++) {
+            DrawTriangle([usermap[0][usermap[1][i][1]-1][1], usermap[0][usermap[1][i][1]-1][2], usermap[0][usermap[1][i][1]-1][3]],
+                        [usermap[0][usermap[1][i][2]-1][1], usermap[0][usermap[1][i][2]-1][2], usermap[0][usermap[1][i][2]-1][3]],
+                        [usermap[0][usermap[1][i][3]-1][1], usermap[0][usermap[1][i][3]-1][2], usermap[0][usermap[1][i][3]-1][3]], col[i])
+        }
+    }
     
     if (camera_angle.x > 3.14) {
         camera_angle.x = 3.14
