@@ -28,6 +28,14 @@ function SetCamera(x, y, z) {
 	camera.z = z
 }
 
+
+/*function SetCamera( fov) {
+	camera.x = display.x
+	camera.y = display.y - fov 
+	camera.z = display.z
+}
+*/
+
 function SetCameraAngle(x, y, z) {
 	camera_angle.x = x
 	camera_angle.y = y

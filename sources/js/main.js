@@ -66,42 +66,42 @@ function keyPush(evt) {
             break;*/ 
 
 
-        case 81: // q
+        case 74 : // j
         	camera.x = camera.x - 1
             break;
-        case 83: // s
+        case 77: // l
         	camera.x = camera.x + 1
             break;
-        case 68: // d
+        case 75: // k
         	camera.y = camera.y - 1
             break;
-        case 70: // f
+        case 73: // i
         	camera.y = camera.y + 1
             break;
-        case 71: // g
+        case 85: // u
         	camera.z = camera.z - 1
             break;
-        case 72: // h
+        case 79: // o
         	camera.z = camera.z + 1
             break;
      
 
-        case 87: // w
+        case 81: // q
         	display.x = display.x - 5
             break;
-        case 88: // x
+        case 68: // d
         	display.x = display.x + 5
             break;
-        case 67: // c
+        case 69: // e
         	display.y = display.y - 5
             break;
-        case 86: // v
+        case 65: // a
         	display.y = display.y + 5
             break;
-        case 66: // b
+        case 83: // s
         	display.z = display.z - 5
             break;
-        case 78: // n
+        case 90: // z
         	display.z = display.z + 5
             break;
     }
