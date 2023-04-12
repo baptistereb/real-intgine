@@ -27,9 +27,12 @@ function mainloop() {
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
     if(typeof usermap != "undefined") {
         for(let i = 0; i < usermap[1].length; i++) {
-            DrawTriangle([usermap[0][usermap[1][i][1]-1][1], usermap[0][usermap[1][i][1]-1][2], usermap[0][usermap[1][i][1]-1][3]],
-                        [usermap[0][usermap[1][i][2]-1][1], usermap[0][usermap[1][i][2]-1][2], usermap[0][usermap[1][i][2]-1][3]],
-                        [usermap[0][usermap[1][i][3]-1][1], usermap[0][usermap[1][i][3]-1][2], usermap[0][usermap[1][i][3]-1][3]], col[i])
+            offsetX = 10
+            offsetY = 0
+            offsetZ = 0
+            DrawTriangle([offsetX+usermap[0][usermap[1][i][1]-1][1], offsetY+usermap[offsetY+0][usermap[1][i][1]-1][2], offsetZ+usermap[0][usermap[1][i][1]-1][3]],
+                        [offsetX+usermap[0][usermap[1][i][2]-1][1], offsetY+usermap[0][usermap[1][i][2]-1][2], offsetZ+usermap[0][usermap[1][i][2]-1][3]],
+                        [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], col[i])
         }
     }
     
