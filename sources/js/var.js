@@ -1,4 +1,4 @@
-const fov = 100
+var fov = 400
 
 var camera = {
 	x: 0,
