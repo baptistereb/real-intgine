@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 
 SetCamera(0, 0, 0)
 SetCameraAngle(1.4, 0, 2)
-SetDisplay(300, 300, 300)
+NewDisplay()
 
     
 document.addEventListener("keydown",keyPush);
@@ -11,6 +11,7 @@ setInterval(mainloop,1000/60);
 
 i=0
 function mainloop() {
+    NewDisplay()
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
