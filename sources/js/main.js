@@ -14,7 +14,7 @@ function mainloop() {
 	i = i+1
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
-	/*DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
+	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
 	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
 	DrawSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
@@ -22,7 +22,7 @@ function mainloop() {
 	DrawSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "yellow")
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
-*/
+
 
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
     if(typeof usermap != "undefined") {
@@ -89,7 +89,7 @@ function keyPush(evt) {
             break;
      
 
-        case 81: // q
+        /*case 81: // q
         	display.x = display.x - 5
             break;
         case 68: // d
@@ -106,6 +106,6 @@ function keyPush(evt) {
             break;
         case 90: // z
         	display.z = display.z + 5
-            break;
+            break;*/
     }
 }
