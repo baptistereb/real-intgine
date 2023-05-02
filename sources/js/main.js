@@ -13,7 +13,7 @@ i=0
 function mainloop() {
     NewDisplay()
 	i = i+1
-    ctx.fillStyle="white";
+    /*ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
@@ -23,7 +23,7 @@ function mainloop() {
 	DrawSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "yellow")
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
-
+*/
 
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
     if(typeof usermap != "undefined") {
@@ -70,16 +70,16 @@ function keyPush(evt) {
             break;*/ 
 
 
-        case 74 : // j
+        case 90 : // z
         	camera.x = camera.x - 1
             break;
-        case 77: // l
+        case 65: // a
         	camera.x = camera.x + 1
             break;
-        case 75: // k
+        case 81: // q
         	camera.y = camera.y - 1
             break;
-        case 73: // i
+        case 83: // s
         	camera.y = camera.y + 1
             break;
         case 85: // u
