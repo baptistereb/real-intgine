@@ -15,14 +15,14 @@ function mainloop() {
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
-	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
+	AddPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
-	DrawSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
-	DrawSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
-	DrawSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
-	DrawSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "blue")
-	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
-	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
+	AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
+	AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
+	AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
+	AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "blue")
+	AddSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
+	AddSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
     
 
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
