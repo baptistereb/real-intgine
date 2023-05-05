@@ -1,5 +1,7 @@
 var fov = 400
 
+var triangle_list = []
+
 var camera = {
 	x: 0,
 	y: 0,
