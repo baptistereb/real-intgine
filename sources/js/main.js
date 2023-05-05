@@ -10,10 +10,12 @@ document.addEventListener("keydown",keyPush);
 setInterval(mainloop,1000/60);
 
 i=0
+
+console.log(faceOrder([[10, 47, 0], [10, 42, 0], [10, 20, 2], [10, 10, 2]]))
 function mainloop() {
     NewDisplay()
 	i = i+1
-    /*ctx.fillStyle="white";
+/*    ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 	DrawPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
@@ -24,7 +26,7 @@ function mainloop() {
 	DrawSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
 	DrawSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
 */
-
+/*
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
     if(typeof usermap != "undefined") {
         for(let i = 0; i < usermap[1].length; i++) {
@@ -43,7 +45,7 @@ function mainloop() {
     if (camera_angle.x<0) {
         camera_angle.x=0
     }
-    //console.log(camera_angle)
+ */   //console.log(camera_angle)
 }
 
 function keyPush(evt) {
@@ -70,22 +72,22 @@ function keyPush(evt) {
             break;*/ 
 
 
-        case 90 : // z
+        case 81 : // q
         	camera.x = camera.x - 1
             break;
-        case 65: // a
+        case 68: // d
         	camera.x = camera.x + 1
             break;
-        case 81: // q
+        case 69: // e
         	camera.y = camera.y - 1
             break;
-        case 83: // s
+        case 65: // a
         	camera.y = camera.y + 1
             break;
-        case 85: // u
+        case 83: // s
         	camera.z = camera.z - 1
             break;
-        case 79: // o
+        case 90: // z
         	camera.z = camera.z + 1
             break;
      
