@@ -7,5 +7,4 @@ function DrawAllTriangle() {
 	while((face = triangle_list.shift()) !== undefined) {
 		DrawTriangle(face[0],face[1],face[2],face[3])	//on draw la face retiré
 	}
-	triangle_list=[]
 }
