@@ -14,8 +14,18 @@ function centerOfSquare(p1, p2, p3, p4) {
 	]
 }
 
-function faceOrder (faces) {
-	faces.sort((a, b) => a[1] - b[1]);
+function distanceFromCamera(co1, co2, co3) {
+	center = centerOfTriangle(co1, co2, co3)
+	return Math.sqrt(Math.pow(center[0]-camera.x, 2)+Math.pow(center[1]-camera.y, 2)+Math.pow(center[2]-camera.z, 2))
+}
 
+function faceOrder (faces) {
+	//partie du calcul de la distance entre la caméra et la faces
+	faces.forEach(function(face){
+	  face[4] = distanceFromCamera(face[0],face[1],face[2])
+	});
+
+	console.log(faces)
+	
 	return faces
 }
