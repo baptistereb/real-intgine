@@ -5,11 +5,8 @@ SetCamera(0, 0, 0)
 SetCameraAngle(1.4, 0, 2)
     
 document.addEventListener("keydown",keyPush);
-setInterval(mainloop,1000/60);
+setInterval(mainloop); //setInterval(mainloop, 1000/60);
 
-
-
-//console.log(faceOrder([[10, 47, 0], [10, 42, 0], [10, 20, 2], [10, 10, 2]]))
 function mainloop() {
     NewDisplay()
     ctx.fillStyle="white";
@@ -37,8 +34,6 @@ function mainloop() {
         }
     }
     
-    // c'est ici qu'il faudra trier la variable triangle_list avec face ordering
-
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
     if (camera_angle.x > 3.14) {
