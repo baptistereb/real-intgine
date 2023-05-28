@@ -1,11 +1,11 @@
 function strToMatrix(str) {
-    n=1
+    str = str.replace(/[^0-9.\s\r\nvf]/g, "");
     matrix = str.split("\n").map(line => line.split(" "))
     v = []
     f = []
-    for(let i=0; i<matrix.length; i++) {
+    for(let i=5; i<matrix.length; i++) {        //les 6 première lignes c'est des métadonné on s'en fiche
         if(matrix[i][0] == 'f' || matrix[i][0] == 'v') {
-            matrix[i][3] = matrix[i][3]//.slice(0, -1) // à décommenter sous windows
+            matrix[i][3] = matrix[i][3]//.slice(0, -1) //.slice(0, -1) à décommenter sous windows
             if(matrix[i][0] == 'v') {
                 v.push(matrix[i])
             } else {
@@ -13,6 +13,18 @@ function strToMatrix(str) {
             }
         }
     }
+
+    var v = v.map(function(row) {
+      return row.map(function(value) {
+        return parseFloat(value, 10);
+      });
+    });
+    var f = f.map(function(row) {
+      return row.map(function(value) {
+        return parseInt(value, 10);
+      });
+    });
+
     return [v, f]
 }
 
