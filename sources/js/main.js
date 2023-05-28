@@ -5,9 +5,12 @@ var previousY = null;
 var canvas = document.getElementById("Canvas");
 var ctx = canvas.getContext("2d");
 
-SetCamera(0, 0, 0)
-SetCameraAngle(1.4, 0, 2)
-    
+/*SetCamera(0, 0, 0)
+SetCameraAngle(1.4, 0, 2)*/
+SetCamera(-27, -18, -24)
+//SetCamera(0,-200, 0)
+SetCameraAngle(1.594, 0, 1.4879999999999)
+
 document.addEventListener("keydown",keyPush);
 document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("wheel", handleMouseZoom);
@@ -21,28 +24,16 @@ function mainloop() {
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
-	//AddPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
-
-	/*AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
-	AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
-	AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
-	AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "blue")
-	AddSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
-    AddSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")*/
-
-    AddSquare([10, 40, 0], [10, 42, 0], [12, 42, 0], [12, 40, 0], "blue")
+    /*AddSquare([10, 40, 0], [10, 42, 0], [12, 42, 0], [12, 40, 0], "blue")
     AddSquare([10, 40, 2], [10, 42, 2], [12, 42, 2], [12, 40, 2], "blue")
     AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
     AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "red")
     AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "orange")
     AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "orange")
 
+*/
 
-
-    //AddSquare([1000, 1000, 0], [1000, 0, 0], [0, 0, 0], [0, 1000, 0], "green")
-    
-
-    col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
+    //col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
     if(typeof usermap != "undefined") {
         for(let i = 0; i < usermap[1].length; i++) {
             offsetX = 0
@@ -50,11 +41,10 @@ function mainloop() {
             offsetZ = 0
             AddTriangle([offsetX+usermap[0][usermap[1][i][1]-1][1], offsetY+usermap[0][usermap[1][i][1]-1][2], offsetZ+usermap[0][usermap[1][i][1]-1][3]],
                         [offsetX+usermap[0][usermap[1][i][2]-1][1], offsetY+usermap[0][usermap[1][i][2]-1][2], offsetZ+usermap[0][usermap[1][i][2]-1][3]],
-                        [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], col[i])
+                        [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], "green")
         }
     }
     
-    console.log(triangle_list)
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
     if (camera_angle.x > 3.14) {
