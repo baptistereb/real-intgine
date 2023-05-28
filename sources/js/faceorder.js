@@ -25,7 +25,15 @@ function faceOrder (faces) {
 	  face[4] = distanceFromCamera(face[0],face[1],face[2])
 	});
 
-	console.log(faces)
-	
-	return faces
+	faces.sort(function(a, b) {
+	  return b[4] - a[4];
+	});
+
+	r = []
+
+	faces.forEach(function(face){
+	  r.push(face)
+	});
+
+	return r
 }
