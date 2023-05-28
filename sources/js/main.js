@@ -1,3 +1,7 @@
+// Variables pour stocker les coordonnées précédentes de la souris
+var previousX = null;
+var previousY = null;
+
 var canvas = document.getElementById("Canvas");
 var ctx = canvas.getContext("2d");
 
@@ -5,21 +9,37 @@ SetCamera(0, 0, 0)
 SetCameraAngle(1.4, 0, 2)
     
 document.addEventListener("keydown",keyPush);
+document.addEventListener("mousemove", handleMouseMove);
+document.addEventListener("wheel", handleMouseZoom);
+
 setInterval(mainloop); //setInterval(mainloop, 1000/60);
+
+
 
 function mainloop() {
     NewDisplay()
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
-	AddPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
+	//AddPyramide([10,2,10], [2, 5, 1], [50, 0, 0],[30,50,5], "blue", "red", "pink", "black") 
 
-	AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
+	/*AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "blue")
 	AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "green")
 	AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
 	AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "blue")
 	AddSquare([12, 40, 0], [10, 40, 0], [10, 40, 2], [12, 40, 2], "orange")
-	AddSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")
+    AddSquare([12, 42, 0], [10, 42, 0], [10, 42, 2], [12, 42, 2], "pink")*/
+
+    AddSquare([10, 40, 0], [10, 42, 0], [12, 42, 0], [12, 40, 0], "blue")
+    AddSquare([10, 40, 2], [10, 42, 2], [12, 42, 2], [12, 40, 2], "blue")
+    AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
+    AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "red")
+    AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "orange")
+    AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "orange")
+
+
+
+    //AddSquare([1000, 1000, 0], [1000, 0, 0], [0, 0, 0], [0, 1000, 0], "green")
     
 
     col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
@@ -34,6 +54,7 @@ function mainloop() {
         }
     }
     
+    console.log(triangle_list)
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
     if (camera_angle.x > 3.14) {
@@ -42,6 +63,36 @@ function mainloop() {
     if (camera_angle.x<0) {
         camera_angle.x=0
     }
+}
+
+
+function handleMouseMove(event) {
+  // Vérifier si les coordonnées précédentes existent
+  if (previousX !== null && previousY !== null) {
+    // Calculer le delta horizontal et vertical
+    var deltaX = event.clientX - previousX;
+    var deltaY = event.clientY - previousY;
+    
+    // Utiliser les valeurs de deltaX et deltaY à des fins quelconques
+    camera_angle.x = camera_angle.x - deltaY*0.002
+    camera_angle.z = camera_angle.z + deltaX*0.002
+  }
+  
+  // Mettre à jour les coordonnées précédentes avec les coordonnées actuelles
+  previousX = event.clientX;
+  previousY = event.clientY;
+}
+
+function handleMouseZoom(event) {
+  // Vérifier si le déplacement de la souris est un zoom
+  if (event.deltaY < 0) {
+    // Zoom in (approche)
+    fov = fov - event.deltaY*0.1;
+  } else {
+    // Zoom out (éloignement)
+    fov = fov - event.deltaY*0.1;
+  }
+  console.log(fov)
 }
 
 function keyPush(evt) {
