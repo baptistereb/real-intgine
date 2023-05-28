@@ -14,23 +14,26 @@ function centerOfSquare(p1, p2, p3, p4) {
 	]
 }
 
-function faceOrder (cama, dis, faces) {
-	//NewDisplay(dis,cama)
-	let l=[]
-	for (const i of faces) {
-		let distance = i[1] - base.y
+function distanceFromCamera(co1, co2, co3) {
+	center = centerOfTriangle(co1, co2, co3)
+	return Math.sqrt(Math.pow(center[0]-camera.x, 2)+Math.pow(center[1]-camera.y, 2)+Math.pow(center[2]-camera.z, 2))
+}
 
-		if(distance > 0) {
-			l.push({
-				x : i[0],
-				y : i[1],
-				z : i[2],
-				d : distance
-			})
-		}
-	}
+function faceOrder (faces) {
+	//partie du calcul de la distance entre la caméra et la faces
+	faces.forEach(function(face){
+	  face[4] = distanceFromCamera(face[0],face[1],face[2])
+	});
 
-	l.sort(function(a, b){return b.d - a.d})
+	faces.sort(function(a, b) {
+	  return b[4] - a[4];
+	});
 
-	return l
+	r = []
+
+	faces.forEach(function(face){
+	  r.push(face)
+	});
+
+	return r
 }
