@@ -182,8 +182,8 @@ document.getElementById('button4').onclick = function() {
 		});
 };
 document.getElementById('button5').onclick = function() {
-	SetCamera(-27, -18, -24)
-	SetCameraAngle(1.594, 0, 1.4879999999999)
+	SetCamera(16, 90, -101)
+	SetCameraAngle(1.15, 0, -2.9)
 	fetch('map/map5.smf')
 		.then(response => response.text())
 		.then(data => {
