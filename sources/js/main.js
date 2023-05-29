@@ -1,19 +1,8 @@
-// Variables pour stocker les coordonnées précédentes de la souris
-var previousX = null;
-var previousY = null;
-
 var canvas = document.getElementById("Canvas");
 var ctx = canvas.getContext("2d");
 
-/*SetCamera(0, 0, 0)
-SetCameraAngle(1.4, 0, 2)*/
 SetCamera(-27, -18, -24)
-//SetCamera(0,-200, 0)
 SetCameraAngle(1.594, 0, 1.4879999999999)
-
-document.addEventListener("keydown",keyPush);
-document.addEventListener("mousemove", handleMouseMove);
-document.addEventListener("wheel", handleMouseZoom);
 
 setInterval(mainloop); //setInterval(mainloop, 1000/60);
 
@@ -21,6 +10,7 @@ setInterval(mainloop); //setInterval(mainloop, 1000/60);
 
 function mainloop() {
     NewDisplay()
+    ReloadInformation()
     ctx.fillStyle="white";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
@@ -44,6 +34,16 @@ function mainloop() {
                         [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], "green")
         }
     }
+    if(chargedmap.length > 0) {
+        for(let i = 0; i < chargedmap[1].length; i++) {
+            offsetX = 0
+            offsetY = 0
+            offsetZ = 0
+            AddTriangle([offsetX+chargedmap[0][chargedmap[1][i][1]-1][1], offsetY+chargedmap[0][chargedmap[1][i][1]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][1]-1][3]],
+                        [offsetX+chargedmap[0][chargedmap[1][i][2]-1][1], offsetY+chargedmap[0][chargedmap[1][i][2]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][2]-1][3]],
+                        [offsetX+chargedmap[0][chargedmap[1][i][3]-1][1], offsetY+chargedmap[0][chargedmap[1][i][3]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][3]-1][3]], "red")
+        }
+    }
     
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
@@ -52,100 +52,5 @@ function mainloop() {
     }
     if (camera_angle.x<0) {
         camera_angle.x=0
-    }
-}
-
-
-function handleMouseMove(event) {
-  // Vérifier si les coordonnées précédentes existent
-  if (previousX !== null && previousY !== null) {
-    // Calculer le delta horizontal et vertical
-    var deltaX = event.clientX - previousX;
-    var deltaY = event.clientY - previousY;
-    
-    // Utiliser les valeurs de deltaX et deltaY à des fins quelconques
-    camera_angle.x = camera_angle.x - deltaY*0.002
-    camera_angle.z = camera_angle.z + deltaX*0.002
-  }
-  
-  // Mettre à jour les coordonnées précédentes avec les coordonnées actuelles
-  previousX = event.clientX;
-  previousY = event.clientY;
-}
-
-function handleMouseZoom(event) {
-  // Vérifier si le déplacement de la souris est un zoom
-  if (event.deltaY < 0) {
-    // Zoom in (approche)
-    fov = fov - event.deltaY*0.1;
-  } else {
-    // Zoom out (éloignement)
-    fov = fov - event.deltaY*0.1;
-  }
-  console.log(fov)
-}
-
-function keyPush(evt) {
-    switch(evt.keyCode) {
-        case 40: // bas
-        	camera_angle.x = camera_angle.x - 0.05
-            break;
-        case 38: // haut
-        	camera_angle.x = camera_angle.x + 0.05
-            break;
-        case 39: // droite
-        	camera_angle.z = camera_angle.z + 0.05
-            break;
-        case 37: // gauche
-        	camera_angle.z = camera_angle.z - 0.05
-            break;
-        
-        //  angle phi dans les angles d'Euler
-        /*case 90: // z
-            camera_angle.y = camera_angle.y + 0.05
-            break;
-        case 65: // a
-            camera_angle.y = camera_angle.y - 0.05
-            break;*/ 
-
-
-        case 81 : // q
-        	camera.x = camera.x - 1
-            break;
-        case 68: // d
-        	camera.x = camera.x + 1
-            break;
-        case 69: // e
-        	camera.y = camera.y - 1
-            break;
-        case 65: // a
-        	camera.y = camera.y + 1
-            break;
-        case 83: // s
-        	camera.z = camera.z - 1
-            break;
-        case 90: // z
-        	camera.z = camera.z + 1
-            break;
-     
-
-        /*case 81: // q
-        	display.x = display.x - 5
-            break;
-        case 68: // d
-        	display.x = display.x + 5
-            break;
-        case 69: // e
-        	display.y = display.y - 5
-            break;
-        case 65: // a
-        	display.y = display.y + 5
-            break;
-        case 83: // s
-        	display.z = display.z - 5
-            break;
-        case 90: // z
-        	display.z = display.z + 5
-            break;*/
     }
 }
