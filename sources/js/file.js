@@ -24,6 +24,10 @@ function strToMatrix(str) {
         return parseInt(value, 10);
       });
     });
+    v.forEach(function(face){ //symétrie car sinon la projection inverse certaines mesures
+      face[1] = (-1)*face[1]
+      face[3] = (-1)*face[3]
+    });
 
     return [v, f]
 }
