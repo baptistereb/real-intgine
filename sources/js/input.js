@@ -126,14 +126,13 @@ var chargedmap = []
 
 
 document.getElementById('button1').onclick = function() {
-	SetCamera(-27, -18, -24)
-	SetCameraAngle(1.594, 0, 1.4879999999999)
+	SetCamera(31, -25, -34)
+	SetCameraAngle(1.68, 0, 3.38)
 	fetch('map/map1.smf')
 		.then(response => response.text())
 		.then(data => {
 			chargedmap = strToMatrix(data)
 			//console.log(chargedmap);
-			alert("Map 1 chargé");
 			})
 		.catch(error => {
 			console.error('Une erreur s\'est produite :', error);
@@ -141,14 +140,13 @@ document.getElementById('button1').onclick = function() {
 		});
 }
 document.getElementById('button2').onclick = function() {
-	SetCamera(-27, -18, -24)
-	SetCameraAngle(1.594, 0, 1.4879999999999)
+	SetCamera(-24, -20, -31)
+	SetCameraAngle(1.26, 0, 2.25)
 	fetch('map/map2.smf')
 		.then(response => response.text())
 		.then(data => {
 			chargedmap = strToMatrix(data)
 			//console.log(chargedmap);
-			alert("Map 2 chargé");
 			})
 		.catch(error => {
 			console.error('Une erreur s\'est produite :', error);
@@ -163,7 +161,6 @@ document.getElementById('button3').onclick = function() {
 		.then(data => {
 			chargedmap = strToMatrix(data)
 			//console.log(chargedmap);
-			alert("Map 3 chargé");
 			})
 		.catch(error => {
 			console.error('Une erreur s\'est produite :', error);
@@ -171,14 +168,13 @@ document.getElementById('button3').onclick = function() {
 		});
 };
 document.getElementById('button4').onclick = function() {
-	SetCamera(-27, -18, -24)
-	SetCameraAngle(1.594, 0, 1.4879999999999)
+	SetCamera(-12, -174, -194)
+	SetCameraAngle(1.65, 0, -3.41)
 	fetch('map/map4.smf')
 		.then(response => response.text())
 		.then(data => {
 			chargedmap = strToMatrix(data)
 			//console.log(chargedmap);
-			alert("Map 4 chargé");
 			})
 		.catch(error => {
 			console.error('Une erreur s\'est produite :', error);
@@ -193,7 +189,6 @@ document.getElementById('button5').onclick = function() {
 		.then(data => {
 			chargedmap = strToMatrix(data)
 			//console.log(chargedmap);
-			alert("Map 5 chargé");
 			})
 		.catch(error => {
 			console.error('Une erreur s\'est produite :', error);
