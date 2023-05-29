@@ -128,6 +128,7 @@ var chargedmap = []
 document.getElementById('button1').onclick = function() {
 	SetCamera(31, -25, -34)
 	SetCameraAngle(1.68, 0, 3.38)
+	fov=400
 	fetch('map/map1.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -142,6 +143,7 @@ document.getElementById('button1').onclick = function() {
 document.getElementById('button2').onclick = function() {
 	SetCamera(-24, -20, -31)
 	SetCameraAngle(1.26, 0, 2.25)
+	fov=400
 	fetch('map/map2.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -156,6 +158,7 @@ document.getElementById('button2').onclick = function() {
 document.getElementById('button3').onclick = function() {
 	SetCamera(-17, -23, -18)
 	SetCameraAngle(1.47, 0, 1.81)
+	fov=400
 	fetch('map/map3.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -170,6 +173,7 @@ document.getElementById('button3').onclick = function() {
 document.getElementById('button4').onclick = function() {
 	SetCamera(-12, -174, -194)
 	SetCameraAngle(1.65, 0, -3.41)
+	fov=400
 	fetch('map/map4.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -184,6 +188,7 @@ document.getElementById('button4').onclick = function() {
 document.getElementById('button5').onclick = function() {
 	SetCamera(16, 90, -101)
 	SetCameraAngle(1.15, 0, -2.9)
+	fov=660
 	fetch('map/map5.smf')
 		.then(response => response.text())
 		.then(data => {
