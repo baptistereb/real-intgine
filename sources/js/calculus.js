@@ -1,4 +1,4 @@
-//multiplication de 2 matrices matrices
+//multiplication de 2 matrices
 function multMatrix(m1, m2) {
     var result = [];
     for (var i = 0; i < m1.length; i++) {
