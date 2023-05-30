@@ -26,7 +26,7 @@ function vectorLength(v) {
 }
 
 
-// produit vectoriel
+// produit vectoriel en dimension 3
 function crossProduct(u, v) {
   const x = u[1] * v[2] - u[2] * v[1];
   const y = u[2] * v[0] - u[0] * v[2];
