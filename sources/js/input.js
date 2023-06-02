@@ -65,10 +65,10 @@ function keyPush(evt) {
             break;*/ 
 
 
-        case 81 : // q
+        case 68 : // d
         	camera.x = camera.x - 1
             break;
-        case 68: // d
+        case 81: // q
         	camera.x = camera.x + 1
             break;
         case 69: // e
@@ -77,10 +77,10 @@ function keyPush(evt) {
         case 65: // a
         	camera.y = camera.y + 1
             break;
-        case 83: // s
+        case 90: // z
         	camera.z = camera.z - 1
             break;
-        case 90: // z
+        case 83: // s
         	camera.z = camera.z + 1
             break;
      
@@ -108,13 +108,13 @@ function keyPush(evt) {
 
 
 function ReloadInformation() {
-	document.getElementById("camerax").textContent = "camera.x : " + Math.round(camera.x*100)/100;
-	document.getElementById("cameray").textContent = "camera.y : " + Math.round(camera.y*100)/100;
-	document.getElementById("cameraz").textContent = "camera.z : " + Math.round(camera.z*100)/100;
-	document.getElementById("camera_anglex").textContent = "camera_angle.x : " + Math.round(camera_angle.x*100)/100;
-	document.getElementById("camera_angley").textContent = "camera_angle.y : " + Math.round(camera_angle.y*100)/100;
-	document.getElementById("camera_anglez").textContent = "camera_angle.z : " + Math.round(camera_angle.z*100)/100;
-	document.getElementById("fov").textContent = "fov : " + Math.round(fov*100)/100;
+	document.getElementById("camerax").textContent = Math.round(camera.x*100)/100;
+	document.getElementById("cameray").textContent = Math.round(camera.y*100)/100;
+	document.getElementById("cameraz").textContent = Math.round(camera.z*100)/100;
+	document.getElementById("camera_anglex").textContent = Math.round(camera_angle.x*100)/100;
+	document.getElementById("camera_angley").textContent = Math.round(camera_angle.y*100)/100;
+	document.getElementById("camera_anglez").textContent = Math.round(camera_angle.z*100)/100;
+	document.getElementById("fov").textContent = Math.round(fov*100)/100;
 	if (document.getElementById("mouseevent").checked === true) {
 	    mouseeventon = true
 	} else {
