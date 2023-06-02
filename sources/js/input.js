@@ -136,9 +136,9 @@ function ReloadKey(k) {
 
 
 function ReloadInformation() {
-	document.getElementById("camerax").textContent = Math.round(camera.x*100)/100;
-	document.getElementById("cameray").textContent = Math.round(camera.y*100)/100;
-	document.getElementById("cameraz").textContent = Math.round(camera.z*100)/100;
+	document.getElementById("camerax").textContent = (-1)*Math.round(camera.x*100)/100;
+	document.getElementById("cameray").textContent = (-1)*Math.round(camera.y*100)/100;
+	document.getElementById("cameraz").textContent = (-1)*Math.round(camera.z*100)/100;
 	document.getElementById("camera_anglex").textContent = Math.round(camera_angle.x*100)/100;
 	document.getElementById("camera_angley").textContent = Math.round(camera_angle.y*100)/100;
 	document.getElementById("camera_anglez").textContent = Math.round(camera_angle.z*100)/100;
