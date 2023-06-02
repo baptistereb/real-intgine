@@ -5,6 +5,7 @@ var previousY = null;
 var mouseeventon = false;
 
 document.addEventListener("keydown",keyPush);
+document.addEventListener("keyup",ReloadKey);
 
 document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("wheel", handleMouseZoom);
@@ -42,6 +43,7 @@ function handleMouseZoom(event) {
 }
 
 function keyPush(evt) {
+	ReloadKey(evt)
     switch(evt.keyCode) {
         case 40: // bas
         	camera_angle.x = camera_angle.x - 0.05
@@ -83,27 +85,53 @@ function keyPush(evt) {
         case 83: // s
         	camera.z = camera.z + 1
             break;
-     
-
-        /*case 81: // q
-        	display.x = display.x - 5
-            break;
-        case 68: // d
-        	display.x = display.x + 5
-            break;
-        case 69: // e
-        	display.y = display.y - 5
-            break;
-        case 65: // a
-        	display.y = display.y + 5
-            break;
-        case 83: // s
-        	display.z = display.z - 5
-            break;
-        case 90: // z
-        	display.z = display.z + 5
-            break;*/
     }
+}
+
+function ReloadKey(k) {
+	if(k.type == "keyup") {
+		switch(k.keyCode) {
+	        case 68 : // d
+	        	document.getElementById("d").style.color = "white";
+	            break;
+	        case 81: // q
+	        	document.getElementById("q").style.color = "white";
+	            break;
+	        case 69: // e
+	        	document.getElementById("e").style.color = "white";
+	            break;
+	        case 65: // a
+	        	document.getElementById("a").style.color = "white";
+	            break;
+	        case 90: // z
+	        	document.getElementById("z").style.color = "white";
+	            break;
+	        case 83: // s
+	        	document.getElementById("s").style.color = "white";
+	            break;
+	    }
+	} else {
+		switch(k.keyCode) {
+	        case 68 : // d
+	        	document.getElementById("d").style.color = "#00ADB5";
+	            break;
+	        case 81: // q
+	        	document.getElementById("q").style.color = "#00ADB5";
+	            break;
+	        case 69: // e
+	        	document.getElementById("e").style.color = "#00ADB5";
+	            break;
+	        case 65: // a
+	        	document.getElementById("a").style.color = "#00ADB5";
+	            break;
+	        case 90: // z
+	        	document.getElementById("z").style.color = "#00ADB5";
+	            break;
+	        case 83: // s
+	        	document.getElementById("s").style.color = "#00ADB5";
+	            break;
+	    }
+	}
 }
 
 
