@@ -7,8 +7,7 @@ fov = 1200
 
 setInterval(mainloop); //setInterval(mainloop, 1000/60);
 
-
-
+i=0
 function mainloop() {
     NewDisplay()
     ReloadInformation()
@@ -54,5 +53,12 @@ function mainloop() {
     }
     if (camera_angle.x<0) {
         camera_angle.x=0
+    }
+
+    i++
+    if(i==nb_iter) {
+        timer = Math.round(nb_iter*1000/(new Date().getTime() - date))
+        date = new Date().getTime()
+        i=0
     }
 }

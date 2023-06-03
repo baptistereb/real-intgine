@@ -148,6 +148,8 @@ function ReloadKey(k) {
 }
 
 
+setInterval(function () {document.getElementById("fps").textContent = timer;}, 500);
+	
 function ReloadInformation() {
 	document.getElementById("camerax").textContent = (-1)*Math.round(camera.x*100)/100;
 	document.getElementById("cameray").textContent = (-1)*Math.round(camera.y*100)/100;
@@ -168,8 +170,8 @@ var chargedmap = []
 
 document.getElementById('button1').onclick = function() {
 	SetCamera(31, -25, -34)
-	SetCameraAngle(1.68, 0, 3.38)
-	fov=400
+	SetCameraAngle(1.42, 0, 3.68)
+	fov=1200
 	fetch('map/map1.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -183,8 +185,8 @@ document.getElementById('button1').onclick = function() {
 }
 document.getElementById('button2').onclick = function() {
 	SetCamera(-24, -20, -31)
-	SetCameraAngle(1.26, 0, 2.25)
-	fov=400
+	SetCameraAngle(1.08, 0, 2.76)
+	fov=1200
 	fetch('map/map2.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -198,8 +200,8 @@ document.getElementById('button2').onclick = function() {
 };
 document.getElementById('button3').onclick = function() {
 	SetCamera(-17, -23, -18)
-	SetCameraAngle(1.47, 0, 1.81)
-	fov=400
+	SetCameraAngle(1.39, 0, 2.36)
+	fov=1200
 	fetch('map/map3.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -212,9 +214,9 @@ document.getElementById('button3').onclick = function() {
 		});
 };
 document.getElementById('button4').onclick = function() {
-	SetCamera(-12, -174, -194)
-	SetCameraAngle(1.65, 0, -3.41)
-	fov=400
+	SetCamera(-12, -292, -245)
+	SetCameraAngle(1.44, 0, -3.2)
+	fov=1200
 	fetch('map/map4.smf')
 		.then(response => response.text())
 		.then(data => {
@@ -227,9 +229,9 @@ document.getElementById('button4').onclick = function() {
 		});
 };
 document.getElementById('button5').onclick = function() {
-	SetCamera(16, 90, -101)
-	SetCameraAngle(1.15, 0, -2.9)
-	fov=660
+	SetCamera(-9, -37, -105)
+	SetCameraAngle(1.35, 0, -3.15)
+	fov=1200
 	fetch('map/map5.smf')
 		.then(response => response.text())
 		.then(data => {

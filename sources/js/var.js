@@ -1,4 +1,4 @@
-var fov = 400
+var fov = 1200
 
 var triangle_list = []
 
@@ -40,3 +40,7 @@ function NewDisplay() {
 
 var colormap = "#FF0000"
 var colorinput = "#00FF00"
+
+var date = new Date().getTime()
+var timer = 0
+var nb_iter=10 //nb de frame pour calculer les fps
