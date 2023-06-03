@@ -10,6 +10,19 @@ document.addEventListener("keyup",ReloadKey);
 document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("wheel", handleMouseZoom);
 
+document.getElementById('colorinput1').addEventListener('change', function(e) {
+	document.querySelectorAll("p").forEach((p) => {
+		colormap = e.target.value;
+		document.getElementById("coloroutput1").textContent = e.target.value;
+	});
+});
+document.getElementById('colorinput2').addEventListener('change', function(e) {
+	document.querySelectorAll("p").forEach((p) => {
+		colorinput = e.target.value;
+		document.getElementById("coloroutput2").textContent = e.target.value;
+	});
+});
+
 function handleMouseMove(event) {
 	if(mouseeventon) {
 		// Vérifier si les coordonnées précédentes existent

@@ -38,14 +38,5 @@ function NewDisplay() {
 	display.z = fov*Math.sin(camera_angle.x)
 }
 
-/*function SetDisplay(x, y, z) {
-	display.x = x
-	display.y = y
-	display.z = z
-}*/
-
-/*function NewDisplay (dis, ang){
-	base.x = dis[0]* Math.cos(ang[0])
-	base.y = dis[1]* Math.cos(ang[1])
-	base.z = dis[2]* Math.cos(ang[2]) 
-}*/
+var colormap = "#FF0000"
+var colorinput = "#00FF00"

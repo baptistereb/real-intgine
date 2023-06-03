@@ -31,7 +31,7 @@ function mainloop() {
             offsetZ = 0
             AddTriangle([offsetX+usermap[0][usermap[1][i][1]-1][1], offsetY+usermap[0][usermap[1][i][1]-1][2], offsetZ+usermap[0][usermap[1][i][1]-1][3]],
                         [offsetX+usermap[0][usermap[1][i][2]-1][1], offsetY+usermap[0][usermap[1][i][2]-1][2], offsetZ+usermap[0][usermap[1][i][2]-1][3]],
-                        [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], "green")
+                        [offsetX+usermap[0][usermap[1][i][3]-1][1], offsetY+usermap[0][usermap[1][i][3]-1][2], offsetZ+usermap[0][usermap[1][i][3]-1][3]], colorinput)
         }
     }
     if(chargedmap.length > 0) {
@@ -41,7 +41,7 @@ function mainloop() {
             offsetZ = 0
             AddTriangle([offsetX+chargedmap[0][chargedmap[1][i][1]-1][1], offsetY+chargedmap[0][chargedmap[1][i][1]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][1]-1][3]],
                         [offsetX+chargedmap[0][chargedmap[1][i][2]-1][1], offsetY+chargedmap[0][chargedmap[1][i][2]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][2]-1][3]],
-                        [offsetX+chargedmap[0][chargedmap[1][i][3]-1][1], offsetY+chargedmap[0][chargedmap[1][i][3]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][3]-1][3]], "red")
+                        [offsetX+chargedmap[0][chargedmap[1][i][3]-1][1], offsetY+chargedmap[0][chargedmap[1][i][3]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][3]-1][3]], colormap)
         }
     }
     
