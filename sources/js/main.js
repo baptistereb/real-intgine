@@ -1,8 +1,9 @@
 var canvas = document.getElementById("Canvas");
 var ctx = canvas.getContext("2d");
 
-SetCamera(-27, -18, -24)
-SetCameraAngle(1.594, 0, 1.4879999999999)
+SetCamera(-27, -18, -72)
+SetCameraAngle(1.16, 0, 2.61)
+fov = 1200
 
 setInterval(mainloop); //setInterval(mainloop, 1000/60);
 
@@ -44,7 +45,8 @@ function mainloop() {
                         [offsetX+chargedmap[0][chargedmap[1][i][3]-1][1], offsetY+chargedmap[0][chargedmap[1][i][3]-1][2], offsetZ+chargedmap[0][chargedmap[1][i][3]-1][3]], colormap)
         }
     }
-    
+
+    document.getElementById("nb_face").textContent = triangle_list.length;
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
     if (camera_angle.x > 3.14) {
