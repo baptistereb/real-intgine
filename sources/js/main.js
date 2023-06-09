@@ -11,8 +11,6 @@ i=0
 function mainloop() {
     NewDisplay()
     ReloadInformation()
-    ctx.fillStyle="white";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
 
     /*AddSquare([10, 40, 0], [10, 42, 0], [12, 42, 0], [12, 40, 0], "blue")
     AddSquare([10, 40, 2], [10, 42, 2], [12, 42, 2], [12, 40, 2], "blue")
@@ -46,6 +44,11 @@ function mainloop() {
     }
 
     document.getElementById("nb_face").textContent = triangle_list.length;
+
+
+    ctx.fillStyle="white";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
     DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
     if (camera_angle.x > 3.14) {
