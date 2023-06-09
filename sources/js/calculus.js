@@ -44,9 +44,9 @@ function TriangleToNormal(som1,som2,som3) {
   ];
 
   const v = [
-    som3[6] - som1[0],
-    som3[7] - som1[1],
-    som3[8] - som1[2],
+    som3[0] - som1[0],
+    som3[1] - som1[1],
+    som3[2] - som1[2],
   ];
 
   const normal = crossProduct(u, v);
