@@ -11,17 +11,7 @@ i=0
 function mainloop() {
     NewDisplay()
     ReloadInformation()
-
-    /*AddSquare([10, 40, 0], [10, 42, 0], [12, 42, 0], [12, 40, 0], "blue")
-    AddSquare([10, 40, 2], [10, 42, 2], [12, 42, 2], [12, 40, 2], "blue")
-    AddSquare([10, 40, 0], [12, 40, 0], [12, 40, 2], [10, 40, 2], "red")
-    AddSquare([10, 42, 0], [12, 42, 0], [12, 42, 2], [10, 42, 2], "red")
-    AddSquare([10, 40, 0], [10, 42, 0], [10, 42, 2], [10, 40, 2], "orange")
-    AddSquare([12, 40, 0], [12, 42, 0], [12, 42, 2], [12, 40, 2], "orange")
-
-*/
-
-    //col = ["blue", "blue", "yellow", "yellow", "brown", "brown", "#FF00EC", "#FF00EC", "#587B4C", "#587B4C", "#EE8D00", "#EE8D00"]
+    
     if(typeof usermap != "undefined") {
         for(let i = 0; i < usermap[1].length; i++) {
             offsetX = 0
