@@ -80,45 +80,45 @@
 			            <td><input type="checkbox" id="mouseevent" name="mouseevent"></td>
 			            <td>Souris</td>
 			        </tr>
-			        <tr id="z">
-			            <td width="25%">z :</td>
+			        <tr id="monter">
+			            <td width="25%">a :</td>
 			            <td width="75%">
 			            	monter
 			            </td>
 			        </tr>
-			        <tr id="s">
-			            <td width="25%">s :</td>
+			        <tr id="descendre">
+			            <td width="25%">e :</td>
 			            <td width="75%">
 			            	descendre
 			            </td>
 			        </tr>
-			        <tr id="q">
-			            <td width="25%">q :</td>
+			        <tr id="avancer">
+			            <td width="25%">z :</td>
 			            <td width="75%">
-			            	x-
+			            	avancer
 			            </td>
 			        </tr>
-			        <tr id="d">
+			        <tr id="reculer">
+			            <td width="25%">s :</td>
+			            <td width="75%">
+			            	reculer
+			            </td>
+			        </tr>
+			        <tr id="droite">
 			            <td width="25%">d :</td>
 			            <td width="75%">
-			            	x+
+			            	droite
 			            </td>
 			        </tr>
-			        <tr id="a">
-			            <td width="25%">a :</td>
+			        <tr id="gauche">
+			            <td width="25%">q :</td>
 			            <td width="75%">
-			            	y-
-			            </td>
-			        </tr>
-			        <tr id="e">
-			            <td width="25%">e :</td>
-			            <td width="75%">
-			            	y+
+			            	gauche
 			            </td>
 			        </tr>
 			        <tr>
 			        	<td>
-			        		<input type="color" id="colorinput1" class="colorinput" value="#FF0000">
+			        		<input type="color" id="colorinput" class="colorinput" value="#FF0000">
 			        	</td>
 			        	<td>
 			        		<p id="coloroutput1">#FF0000</p>
@@ -129,29 +129,109 @@
 			<input type="file" name="inputFile" id="inputFile">
 	    	<pre id="output"></pre>
 	    	<table>
-	    		<tr>
-		        	<td>
-		        		<input type="color" id="colorinput2" class="colorinput" value="#00FF00">
-		        	</td>
-		        	<td>
-		        		<p id="coloroutput2">#00FF00</p>
-		        	</td>
-				</tr>
-			</table>
 		</div>
 	</section>
 
-	<script src="sources/js/var.js"></script>
-	<script src="sources/js/calculus.js"></script>
-	<script src="sources/js/file.js"></script>
+	<script src="sources/real-intgine.js"></script>
+	<script type="text/javascript">
+		let test = new RealIntgine("Canvas")
 
-	<script src="sources/js/project.js"></script>
-	<script src="sources/js/triangle.js"></script>
-	<script src="sources/js/custom_shape.js"></script>
-	<script src="sources/js/faceorder.js"></script>
-	<script src="sources/js/facemanager.js"></script>
+		test.ChargerMap("button1", -31, 25, 34, 1.42, 0, 3.68, 1200, "map/map1.smf")
+		test.ChargerMap("button2", 24, 20, 31, 1.08, 0, 2.76 , 1200, "map/map2.smf")
+		test.ChargerMap("button3", 17, 23, 18, 1.39, 0, 2.36, 1200, "map/map3.smf")
+		test.ChargerMap("button4", 12, 292, 245, 1.44, 0, -3.2, 1200, "map/map4.smf")
+		test.ChargerMap("button5", 9, 37, 105, 1.35, 0, -3.15, 1200, "map/map5.smf")
+		test.ChargerMapWithInput("inputFile")
 
-	<script src="sources/js/input.js"></script>
-	<script src="sources/js/main.js"></script>
+		function round(x) {
+			return Math.round(x*100)/100
+		}
+
+		function ReloadKey(k) {
+			if(k.type == "keyup") {
+				switch(k.keyCode) {
+			        case 68 : // d
+			        	document.getElementById("droite").style.color = "white";
+			            break;
+			        case 81: // q
+			        	document.getElementById("gauche").style.color = "white";
+			            break;
+			        case 69: // e
+			        	document.getElementById("descendre").style.color = "white";
+			            break;
+			        case 65: // a
+			        	document.getElementById("monter").style.color = "white";
+			            break;
+			        case 90: // z
+			        	document.getElementById("avancer").style.color = "white";
+			            break;
+			        case 83: // s
+			        	document.getElementById("reculer").style.color = "white";
+			            break;
+			    }
+			} else {
+				switch(k.keyCode) {
+			        case 68 : // d
+			        	document.getElementById("droite").style.color = "#00ADB5";
+			            break;
+			        case 81: // q
+			        	document.getElementById("gauche").style.color = "#00ADB5";
+			            break;
+			        case 69: // e
+			        	document.getElementById("descendre").style.color = "#00ADB5";
+			            break;
+			        case 65: // a
+			        	document.getElementById("monter").style.color = "#00ADB5";
+			            break;
+			        case 90: // z
+			        	document.getElementById("avancer").style.color = "#00ADB5";
+			            break;
+			        case 83: // s
+			        	document.getElementById("reculer").style.color = "#00ADB5";
+			            break;
+			    }
+			}
+		}
+
+		//on change les touches du clavier :
+		//test.keycode=[17,32,90,81,83,68] //descendre, monter, avancer, gauche, reculer, droite
+
+		setInterval(() => {
+			document.getElementById("camerax").textContent = (-1)*round(test.camera.x)
+			document.getElementById("cameray").textContent = (-1)*round(test.camera.y)
+			document.getElementById("cameraz").textContent = (-1)*round(test.camera.z)
+			document.getElementById("camera_anglex").textContent = round(test.camera_angle.x)
+			document.getElementById("camera_angley").textContent = round(test.camera_angle.y)
+			document.getElementById("camera_anglez").textContent = round(test.camera_angle.z)
+			document.getElementById("fov").textContent = round(test.fov*100)/100;
+			document.getElementById("nb_face").textContent = test.triangle_list_length;
+			if (document.getElementById("mouseevent").checked === true) {
+			    test.mouseeventon = true
+			} else {
+				test.mouseeventon = false
+			}
+		})
+
+		setInterval(function () {document.getElementById("fps").textContent = test.fps}.bind(this), 500);
+
+		document.addEventListener("keydown",this.ReloadKey.bind(this));
+		document.addEventListener("keyup",this.ReloadKey.bind(this));
+
+		document.getElementById('colorinput').addEventListener('change', function(e) {
+			document.querySelectorAll("p").forEach((p) => {
+				test.colormap = e.target.value;
+				document.getElementById("coloroutput").textContent = e.target.value;
+			});
+		});
+
+
+		/*test.SetCameraAngle(1.61, 0, 2.48)
+		test.SetCamera(122, 189, 128)
+
+		test.AjouterObjet("map/map5.smf", 0, 0, 90, "#0000FF")
+		test.AjouterObjet("map/map5.smf", 0, 0, 60, "#4B0082")
+		test.AjouterObjet("map/map5.smf", 0, 0, 30, "#800080")
+		test.AjouterObjet("map/map5.smf", 0, 0, 0, "#8A2BE2")*/
+	</script>
 </body>
 </html>
