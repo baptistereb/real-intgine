@@ -132,7 +132,7 @@
 		</div>
 	</section>
 
-	<script src="sources/js/real-intgine.js"></script>
+	<script src="sources/real-intgine.js"></script>
 	<script type="text/javascript">
 		let test = new RealIntgine("Canvas")
 
@@ -193,6 +193,9 @@
 			}
 		}
 
+		//on change les touches du clavier :
+		//test.keycode=[17,32,90,81,83,68] //descendre, monter, avancer, gauche, reculer, droite
+
 		setInterval(() => {
 			document.getElementById("camerax").textContent = (-1)*round(test.camera.x)
 			document.getElementById("cameray").textContent = (-1)*round(test.camera.y)
@@ -211,8 +214,8 @@
 
 		setInterval(function () {document.getElementById("fps").textContent = test.fps}.bind(this), 500);
 
-		document.addEventListener("keydown",this.ReloadKey.bind(this));
-		document.addEventListener("keyup",this.ReloadKey.bind(this));
+		//document.addEventListener("keydown",this.ReloadKey.bind(this));
+		//document.addEventListener("keyup",this.ReloadKey.bind(this));
 
 		document.getElementById('colorinput').addEventListener('change', function(e) {
 			document.querySelectorAll("p").forEach((p) => {

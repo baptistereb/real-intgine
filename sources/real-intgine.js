@@ -21,6 +21,7 @@ class RealIntgine {
 		this.colormap = "#FF0000"
 		this.bgcolor = "white"
 		this.fps = 0 //nombre de fps
+		this.step = 2 //vitesse de deplacement sur la scene
 
 
 		this.date = new Date().getTime()
@@ -347,46 +348,33 @@ class RealIntgine {
 	}
 
 	keyPush(evt) {
+		if(typeof this.keycode == 'undefined') {
+			//descendre, monter, avancer, gauche, reculer, droite
+			this.keycode=[69,65,90,81,83,68] // e a z q s d
+		}
 	    switch(evt.keyCode) {
-	        case 40: // bas
-	        	this.camera_angle.x = this.camera_angle.x - 0.05
+	        case this.keycode[0]: // descendre
+	        	this.camera.z = this.camera.z + 1
 	            break;
-	        case 38: // haut
-	        	this.camera_angle.x = this.camera_angle.x + 0.05
-	            break;
-	        case 39: // droite
-	        	this.camera_angle.z = this.camera_angle.z + 0.05
-	            break;
-	        case 37: // gauche
-	        	this.camera_angle.z = this.camera_angle.z - 0.05
-	            break;
-	        
-	        //  angle phi dans les angles d'Euler
-	        /*case 90: // z
-	            camera_angle.y = camera_angle.y + 0.05
-	            break;
-	        case 65: // a
-	            camera_angle.y = camera_angle.y - 0.05
-	            break;*/ 
-
-
-	        case 68 : // d
-	        	this.camera.x = this.camera.x - 1
-	            break;
-	        case 81: // q
-	        	this.camera.x = this.camera.x + 1
-	            break;
-	        case 69: // e
-	        	this.camera.y = this.camera.y - 1
-	            break;
-	        case 65: // a
-	        	this.camera.y = this.camera.y + 1
-	            break;
-	        case 90: // z
+	        case this.keycode[1]: // monter
 	        	this.camera.z = this.camera.z - 1
 	            break;
-	        case 83: // s
-	        	this.camera.z = this.camera.z + 1
+
+	        case this.keycode[2]: // avancer
+	        	this.camera.x = this.camera.x + this.step*Math.sin(this.camera_angle.z)
+	        	this.camera.y = this.camera.y - this.step*Math.cos(this.camera_angle.z)
+	            break;
+	        case this.keycode[3]: // gauche
+	        	this.camera.x = this.camera.x - this.step*Math.cos(this.camera_angle.z)
+	        	this.camera.y = this.camera.y - this.step*Math.sin(this.camera_angle.z)
+	            break;
+	        case this.keycode[4]: // reculer
+	        	this.camera.x = this.camera.x - this.step*Math.sin(this.camera_angle.z)
+	        	this.camera.y = this.camera.y + this.step*Math.cos(this.camera_angle.z)
+	            break;
+	        case this.keycode[5]: // droite
+	        	this.camera.x = this.camera.x + this.step*Math.cos(this.camera_angle.z)
+	        	this.camera.y = this.camera.y + this.step*Math.sin(this.camera_angle.z)
 	            break;
 	    }
 	}
