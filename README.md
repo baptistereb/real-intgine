@@ -26,7 +26,7 @@ Moteur.SetCamera(1, 3, 4) // changer la position de la caméra
 ## Chargement de la map
 Une première fonction qui permet a partir d'un bouton ou d'un élément HTML, s'il est cliqué de charger une map, et la position et l'angle de la caméra par défaut !
 ```js
-ChargerMap(html_id, camerax, cameray, cameraz, anglex, angley, anglez, fov, path_to_smf)
+Moteur.ChargerMap(html_id, camerax, cameray, cameraz, anglex, angley, anglez, fov, path_to_smf)
 ```
 Exemple
 ```html
@@ -37,7 +37,7 @@ Exemple
 Avec une autre fonction, la possibilité de mettre un champ d'upload de map :
 ```html
 <input type="file" name="inputFile" id="inputFile">
-<script>ChargerMapWithInput("inputFile")</script>
+<script>Moteur.ChargerMapWithInput("inputFile")</script>
 ```
 
 On ne peut charger qu'une seule map, si vous voulez mettres d'autres éléments dans la scène, lisez la section suivante !
