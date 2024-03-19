@@ -428,8 +428,8 @@ class RealIntgine {
 	    this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
 
 
-	    if(this.mainloop != undefined) {
-	    	this.mainloop(this)
+	    if(this.main_loop != undefined) {
+	    	this.main_loop(this)
 	    }
 
 

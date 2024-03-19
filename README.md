@@ -81,7 +81,7 @@ Moteur.mouseeventon=true
 Vous pouvez définir une fonction et utiliser "th" pour acceder à tout les éléments de la classe. Par exemple ici on déplace l'élément 2 sur l'axe x de 1 à chaque itération et on affiche les fps dans la console !
 
 ```js
-Moteur.mainloop = (th) => {
+Moteur.main_loop = (th) => {
 	th.objets[0][1]++
 	console.log(th.fps)
 }
