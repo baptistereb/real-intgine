@@ -66,18 +66,6 @@ class RealIntgine {
 		}.bind(this)
     }
 
-    AjouterObjet(path_to_smf, x, y, z, color) {
-		fetch(path_to_smf)
-			.then(response => response.text())
-			.then(data => {
-				this.objets.push([this.strToMatrix(data), -x, -y, -z, color])
-				})
-			.catch(error => {
-				console.error('Une erreur s\'est produite :', error);
-				alert("Une erreur s\'est produite");
-			});
-    }
-
     ChargerMapWithInput(html_id) {
     	const self = this; // Stockez une référence à "this" dans une variable "self"
 		document.getElementById(html_id).addEventListener('change', function() {
@@ -89,6 +77,18 @@ class RealIntgine {
 		    };
 		    file.readAsText(this.files[0]); // Utilisez "this" ici pour accéder à l'élément DOM
 		});
+    }
+
+    AjouterObjet(path_to_smf, x, y, z, color) {
+		fetch(path_to_smf)
+			.then(response => response.text())
+			.then(data => {
+				this.objets.push([this.strToMatrix(data), -x, -y, -z, color])
+				})
+			.catch(error => {
+				console.error('Une erreur s\'est produite :', error);
+				alert("Une erreur s\'est produite");
+			});
     }
 
 	SetCamera(x, y, z) {
@@ -107,64 +107,6 @@ class RealIntgine {
 		this.display.x = this.fov*Math.cos(this.camera_angle.x)*Math.cos(this.camera_angle.y)
 		this.display.y = this.fov*Math.cos(this.camera_angle.x)*Math.sin(this.camera_angle.y)
 		this.display.z = this.fov*Math.sin(this.camera_angle.x)
-	}
-
-	//multiplication de 2 matrices
-	multMatrix(m1, m2) {
-	    var result = [];
-	    for (var i = 0; i < m1.length; i++) {
-	        result[i] = [];
-	        for (var j = 0; j < m2[0].length; j++) {
-	            var sum = 0;
-	            for (var k = 0; k < m1[0].length; k++) {
-	                sum += m1[i][k] * m2[k][j];
-	            }
-	            result[i][j] = sum;
-	        }
-	    }
-	    return result;
-	}
-
-	//produit scalaire 
-	dotProduct(u, v) {
-	  return u[0] * v[0] + u[1] * v[1] + u[2] * v[2];
-	}
-
-	//Norme
-	vectorLength(v) {
-	  return Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
-	}
-
-	// produit vectoriel en dimension 3
-	crossProduct(u, v) {
-	  const x = u[1] * v[2] - u[2] * v[1];
-	  const y = u[2] * v[0] - u[0] * v[2];
-	  const z = u[0] * v[1] - u[1] * v[0];
-	  return [x, y, z];
-	}
-
-	// retourne le vecteur normal au triangle
-	TriangleToNormal(som1,som2,som3) {
-	  const u = [
-	    som2[0] - som1[0],
-	    som2[1] - som1[1],
-	    som2[2] - som1[2],
-	  ];
-
-	  const v = [
-	    som3[0] - som1[0],
-	    som3[1] - som1[1],
-	    som3[2] - som1[2],
-	  ];
-
-	  const normal = crossProduct(u, v);
-
-	  return normal;
-	}
-
-	//normalise un vecteur
-	Normalise(u){
-	  return [u[0]/vectorLength(u), u[1]/vectorLength(u), u[2]/vectorLength(u)]
 	}
 
 	strToMatrix(str) {
@@ -209,28 +151,6 @@ class RealIntgine {
 		let sx = Math.sin(this.camera_angle.x)
 		let sy = Math.sin(this.camera_angle.y)
 		let sz = Math.sin(this.camera_angle.z)
-
-		/*let mat1 = [
-			[1, 0, 0],
-			[0, cx, sx],
-			[0, (-1)*sx, cx]
-		]
-		//let mat2 = [
-		//	[cy, 0, (-1)*sy],
-		//	[0, 1, 0],
-		//	[sy, 0, cy]
-		//]
-		let mat3 = [
-			[cz, sz, 0],
-			[(-1)*sz, cz, 0],
-			[0, 0, 1]
-		]
-		let vect = [[ax-this.camera.x, 0, 0],
-			[ay-this.camera.y, 0, 0],
-			[az-this.camera.z, 0, 0]
-		]
-		let d = this.multMatrix(this.multMatrix(mat1, mat3), vect)
-		let vectd = [d[0][0], d[1][0], d[2][0]]*/
 
 		let vectd=[
 			(ax-this.camera.x)*cz+(ay-this.camera.y)*sz,
@@ -287,14 +207,6 @@ class RealIntgine {
 			(p1[0]+p2[0]+p3[0])/3,
 			(p1[1]+p2[1]+p3[1])/3,
 			(p1[2]+p2[2]+p3[2])/3
-		]
-	}
-
-	centerOfSquare(p1, p2, p3, p4) {
-		return [
-			(p1[0]+p2[0]+p3[0]+p4[0])/4,
-			(p1[1]+p2[1]+p3[1]+p4[1])/4,
-			(p1[2]+p2[2]+p3[2]+p4[2])/4
 		]
 	}
 
