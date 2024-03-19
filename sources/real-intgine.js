@@ -254,10 +254,10 @@ class RealIntgine {
 		return [projection[0], projection[1], visible_point]
 	}
 
-	DrawTriangle(co1, co2, co3, color) {
+	DrawTriangle(co1, co2, co3, color, stroke) {
 		this.ctx.fillStyle = color//"transparent"
 		this.ctx.strokeStyle = "black"
-	    this.ctx.lineWidth   = 1;
+    	this.ctx.lineWidth = 1;
 		let point1 = this.Project(co1[0], co1[1], co1[2])
 		let point2 = this.Project(co2[0], co2[1], co2[2])
 		let point3 = this.Project(co3[0], co3[1], co3[2])
@@ -271,7 +271,9 @@ class RealIntgine {
 			this.ctx.lineTo(point3[0], point3[1]);
 			this.ctx.lineTo(point1[0], point1[1]);
 			this.ctx.closePath();
-			this.ctx.stroke()
+			if(stroke) {
+				this.ctx.stroke()
+	    	}
 			this.ctx.fill();
 		}
 	}
@@ -316,15 +318,15 @@ class RealIntgine {
 		return r
 	}
 
-	AddTriangle(co1, co2, co3, color) {
-		this.triangle_list.push([co1, co2, co3, color, 0])	//on ajoute une face à la liste des faces à afficher
+	AddTriangle(co1, co2, co3, color, stroke) {
+		this.triangle_list.push([co1, co2, co3, color, 0, stroke])	//on ajoute une face à la liste des faces à afficher
 	}													//le 0 correspond a la distance qui sera ensuite modifié
 
 	DrawAllTriangle() {
 		this.triangle_list = this.faceOrder(this.triangle_list)
 		let face
 		while((face = this.triangle_list.shift()) !== undefined) {
-			this.DrawTriangle(face[0],face[1],face[2],face[3])	//on draw la face retiré
+			this.DrawTriangle(face[0],face[1],face[2],face[3], face[5])	//on draw la face retiré
 		}
 	}
 
@@ -402,7 +404,7 @@ class RealIntgine {
 	            let offsetZ = 0
 	            this.AddTriangle([offsetX+this.usermap[0][this.usermap[1][i][1]-1][1], offsetY+this.usermap[0][this.usermap[1][i][1]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][1]-1][3]],
 	                        [offsetX+this.usermap[0][this.usermap[1][i][2]-1][1], offsetY+this.usermap[0][this.usermap[1][i][2]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][2]-1][3]],
-	                        [offsetX+this.usermap[0][this.usermap[1][i][3]-1][1], offsetY+this.usermap[0][this.usermap[1][i][3]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][3]-1][3]], this.colormap)
+	                        [offsetX+this.usermap[0][this.usermap[1][i][3]-1][1], offsetY+this.usermap[0][this.usermap[1][i][3]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][3]-1][3]], this.colormap, true)
 	        }
 	    }
 	    this.objets.forEach((e) => {
@@ -414,7 +416,7 @@ class RealIntgine {
 	    	for(let i = 0; i < data[1].length; i++) {
 	            this.AddTriangle([x+data[0][data[1][i][1]-1][1], y+data[0][data[1][i][1]-1][2], z+data[0][data[1][i][1]-1][3]],
 	                        [x+data[0][data[1][i][2]-1][1], y+data[0][data[1][i][2]-1][2], z+data[0][data[1][i][2]-1][3]],
-	                        [x+data[0][data[1][i][3]-1][1], y+data[0][data[1][i][3]-1][2], z+data[0][data[1][i][3]-1][3]], color)
+	                        [x+data[0][data[1][i][3]-1][1], y+data[0][data[1][i][3]-1][2], z+data[0][data[1][i][3]-1][3]], color, true)
 	        }
 	    })
 
