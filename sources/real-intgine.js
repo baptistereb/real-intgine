@@ -209,16 +209,17 @@ class RealIntgine {
 		let sx = Math.sin(this.camera_angle.x)
 		let sy = Math.sin(this.camera_angle.y)
 		let sz = Math.sin(this.camera_angle.z)
-		let mat1 = [
+
+		/*let mat1 = [
 			[1, 0, 0],
 			[0, cx, sx],
 			[0, (-1)*sx, cx]
 		]
-		/*let mat2 = [
-			[cy, 0, (-1)*sy],
-			[0, 1, 0],
-			[sy, 0, cy]
-		]*/
+		//let mat2 = [
+		//	[cy, 0, (-1)*sy],
+		//	[0, 1, 0],
+		//	[sy, 0, cy]
+		//]
 		let mat3 = [
 			[cz, sz, 0],
 			[(-1)*sz, cz, 0],
@@ -228,11 +229,14 @@ class RealIntgine {
 			[ay-this.camera.y, 0, 0],
 			[az-this.camera.z, 0, 0]
 		]
-
-		//d = multMatrix(multMatrix(multMatrix(mat1, mat2), mat3), vect)
 		let d = this.multMatrix(this.multMatrix(mat1, mat3), vect)
-		
-		let vectd = [d[0][0], d[1][0], d[2][0]] 
+		let vectd = [d[0][0], d[1][0], d[2][0]]*/
+
+		let vectd=[
+			(ax-this.camera.x)*cz+(ay-this.camera.y)*sz,
+			(-1)*cx*sz*(ax-this.camera.x) + cx*cz*(ay-this.camera.y) + sx*(az-this.camera.z),
+			sx*sz*(ax-this.camera.x) - cz*sx*(ay-this.camera.y) + cx*(az-this.camera.z)
+		]
 
 		return vectd
 	}
