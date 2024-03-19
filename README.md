@@ -1,9 +1,10 @@
 # real-intgine
 Moteur graphique en javascript, orienté objet. Initialement un projet de 2e année à l'INSA Toulouse.
-
-Aspect mathématique : cf Projet_scientifique.pdf & https://en.wikipedia.org/wiki/3D_projection
+Demo par ici : https://real-intgine.insat.fr/
+Aspect mathématique : cf Projet_scientifique.pdf & le dossier image & https://en.wikipedia.org/wiki/3D_projection
 
 ## Ajouter le script
+Le seule script se trouve dans "source/real-intgine.js"
 ```html
 <canvas id="MyCanvas" width="1280" height="720"></canvas>
 <script src="sources/real-intgine.js"></script>
