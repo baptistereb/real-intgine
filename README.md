@@ -9,7 +9,7 @@ Aspect mathématique : cf Projet_scientifique.pdf & le dossier image & https://e
 Le seule script se trouve dans "source/real-intgine.js"
 ```html
 <canvas id="MyCanvas" width="1280" height="720"></canvas>
-<script src="sources/real-intgine.js"></script>
+<script src="real-intgine.js"></script>
 <script type="text/javascript">
 	let Moteur = new RealIntgine("MyCanvas")
 </script>
@@ -74,4 +74,15 @@ Moteur.keycode=[17,32,90,81,83,68] //descendre, monter, avancer, gauche, reculer
 Activation de la souris :
 ```js
 Moteur.mouseeventon=true
+```
+
+
+## Changer des trucs dans la main loop
+Vous pouvez définir une fonction et utiliser "th" pour acceder à tout les éléments de la classe. Par exemple ici on déplace l'élément 2 sur l'axe x de 1 à chaque itération et on affiche les fps dans la console !
+
+```js
+Moteur.mainloop = (th) => {
+	th.objets[0][1]++
+	console.log(th.fps)
+}
 ```
