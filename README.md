@@ -1,5 +1,5 @@
 # real-intgine
-Moteur graphique en javascript, orienté objet. Initialement un projet de 2e année à l'INSA Toulouse.
+Moteur graphique 3D en javascript, orienté objet. Initialement un projet de 2e année à l'INSA Toulouse.
 
 Demo par ici : https://real-intgine.insat.fr/
 
