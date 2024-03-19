@@ -136,11 +136,11 @@
 	<script type="text/javascript">
 		let test = new RealIntgine("Canvas")
 
-		test.ChargerMap("button1", 31, -25, -34, 1.42, 0, 3.68, 1200, "map/map1.smf")
-		test.ChargerMap("button2", -24, -20, -31, 1.08, 0, 2.76 , 1200, "map/map2.smf")
-		test.ChargerMap("button3", -17, -23, -18, 1.39, 0, 2.36, 1200, "map/map3.smf")
-		test.ChargerMap("button4", -12, -292, -245, 1.44, 0, -3.2, 1200, "map/map4.smf")
-		test.ChargerMap("button5", -9, -37, -105, 1.35, 0, -3.15, 1200, "map/map5.smf")
+		test.ChargerMap("button1", -31, 25, 34, 1.42, 0, 3.68, 1200, "map/map1.smf")
+		test.ChargerMap("button2", 24, 20, 31, 1.08, 0, 2.76 , 1200, "map/map2.smf")
+		test.ChargerMap("button3", 17, 23, 18, 1.39, 0, 2.36, 1200, "map/map3.smf")
+		test.ChargerMap("button4", 12, 292, 245, 1.44, 0, -3.2, 1200, "map/map4.smf")
+		test.ChargerMap("button5", 9, 37, 105, 1.35, 0, -3.15, 1200, "map/map5.smf")
 		test.ChargerMapWithInput("inputFile")
 
 		function round(x) {
@@ -223,6 +223,12 @@
 				document.getElementById("coloroutput").textContent = e.target.value;
 			});
 		});
+
+
+		test.SetCameraAngle(1.47, 0, 3.11)
+		test.SetCamera(5, 25, 18)
+
+		test.AjouterObjet("map/map3.smf", 14, 15, 5, "blue")
 	</script>
 </body>
 </html>

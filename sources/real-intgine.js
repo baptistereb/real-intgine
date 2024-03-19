@@ -44,6 +44,7 @@ class RealIntgine {
 		setInterval(this.mainloop.bind(this)); //setInterval(mainloop, 1000/60);
 
 		this.i=0
+		this.objets=[]
     }
 
     ChargerMap(html_id, camerax, cameray, cameraz, anglex, angley, anglez, fov, path_to_smf) {
@@ -65,6 +66,18 @@ class RealIntgine {
 		}.bind(this)
     }
 
+    AjouterObjet(path_to_smf, x, y, z, color) {
+		fetch(path_to_smf)
+			.then(response => response.text())
+			.then(data => {
+				this.objets.push([this.strToMatrix(data), -x, -y, -z, color])
+				})
+			.catch(error => {
+				console.error('Une erreur s\'est produite :', error);
+				alert("Une erreur s\'est produite");
+			});
+    }
+
     ChargerMapWithInput(html_id) {
     	const self = this; // Stockez une référence à "this" dans une variable "self"
 		document.getElementById(html_id).addEventListener('change', function() {
@@ -79,9 +92,9 @@ class RealIntgine {
     }
 
 	SetCamera(x, y, z) {
-		this.camera.x = x
-		this.camera.y = y
-		this.camera.z = z
+		this.camera.x = -x
+		this.camera.y = -y
+		this.camera.z = -z
 	}
 
 	SetCameraAngle(x, y, z) {
@@ -392,6 +405,18 @@ class RealIntgine {
 	                        [offsetX+this.usermap[0][this.usermap[1][i][3]-1][1], offsetY+this.usermap[0][this.usermap[1][i][3]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][3]-1][3]], this.colormap)
 	        }
 	    }
+	    this.objets.forEach((e) => {
+	    	let data = e[0]
+	    	let x = e[1]
+	    	let y = e[2]
+	    	let z = e[3]
+	    	let color = e[4]
+	    	for(let i = 0; i < data[1].length; i++) {
+	            this.AddTriangle([x+data[0][data[1][i][1]-1][1], y+data[0][data[1][i][1]-1][2], z+data[0][data[1][i][1]-1][3]],
+	                        [x+data[0][data[1][i][2]-1][1], y+data[0][data[1][i][2]-1][2], z+data[0][data[1][i][2]-1][3]],
+	                        [x+data[0][data[1][i][3]-1][1], y+data[0][data[1][i][3]-1][2], z+data[0][data[1][i][3]-1][3]], color)
+	        }
+	    })
 
 	    // permet de stocker le nombre de faces pour l'affichage car les faces sont supprimés avec le DrawAllTriangle
 	    this.triangle_list_length = this.triangle_list.length
