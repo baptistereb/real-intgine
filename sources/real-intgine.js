@@ -407,6 +407,7 @@ class RealIntgine {
 	                        [offsetX+this.usermap[0][this.usermap[1][i][3]-1][1], offsetY+this.usermap[0][this.usermap[1][i][3]-1][2], offsetZ+this.usermap[0][this.usermap[1][i][3]-1][3]], this.colormap, true)
 	        }
 	    }
+
 	    this.objets.forEach((e) => {
 	    	let data = e[0]
 	    	let x = e[1]
@@ -425,6 +426,12 @@ class RealIntgine {
 
 	    this.ctx.fillStyle=this.bgcolor;
 	    this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);
+
+
+	    if(this.mainloop != undefined) {
+	    	this.mainloop(this)
+	    }
+
 
 	    this.DrawAllTriangle() // on Draw toutes les faces qu'on a ajouté à la liste
 
