@@ -80,40 +80,40 @@
 			            <td><input type="checkbox" id="mouseevent" name="mouseevent"></td>
 			            <td>Souris</td>
 			        </tr>
-			        <tr id="z">
-			            <td width="25%">z :</td>
+			        <tr id="monter">
+			            <td width="25%">a :</td>
 			            <td width="75%">
 			            	monter
 			            </td>
 			        </tr>
-			        <tr id="s">
-			            <td width="25%">s :</td>
+			        <tr id="descendre">
+			            <td width="25%">e :</td>
 			            <td width="75%">
 			            	descendre
 			            </td>
 			        </tr>
-			        <tr id="q">
-			            <td width="25%">q :</td>
+			        <tr id="avancer">
+			            <td width="25%">z :</td>
 			            <td width="75%">
-			            	x-
+			            	avancer
 			            </td>
 			        </tr>
-			        <tr id="d">
+			        <tr id="reculer">
+			            <td width="25%">s :</td>
+			            <td width="75%">
+			            	reculer
+			            </td>
+			        </tr>
+			        <tr id="droite">
 			            <td width="25%">d :</td>
 			            <td width="75%">
-			            	x+
+			            	droite
 			            </td>
 			        </tr>
-			        <tr id="a">
-			            <td width="25%">a :</td>
+			        <tr id="gauche">
+			            <td width="25%">q :</td>
 			            <td width="75%">
-			            	y-
-			            </td>
-			        </tr>
-			        <tr id="e">
-			            <td width="25%">e :</td>
-			            <td width="75%">
-			            	y+
+			            	gauche
 			            </td>
 			        </tr>
 			        <tr>
@@ -151,43 +151,43 @@
 			if(k.type == "keyup") {
 				switch(k.keyCode) {
 			        case 68 : // d
-			        	document.getElementById("d").style.color = "white";
+			        	document.getElementById("droite").style.color = "white";
 			            break;
 			        case 81: // q
-			        	document.getElementById("q").style.color = "white";
+			        	document.getElementById("gauche").style.color = "white";
 			            break;
 			        case 69: // e
-			        	document.getElementById("e").style.color = "white";
+			        	document.getElementById("descendre").style.color = "white";
 			            break;
 			        case 65: // a
-			        	document.getElementById("a").style.color = "white";
+			        	document.getElementById("monter").style.color = "white";
 			            break;
 			        case 90: // z
-			        	document.getElementById("z").style.color = "white";
+			        	document.getElementById("avancer").style.color = "white";
 			            break;
 			        case 83: // s
-			        	document.getElementById("s").style.color = "white";
+			        	document.getElementById("reculer").style.color = "white";
 			            break;
 			    }
 			} else {
 				switch(k.keyCode) {
 			        case 68 : // d
-			        	document.getElementById("d").style.color = "#00ADB5";
+			        	document.getElementById("droite").style.color = "#00ADB5";
 			            break;
 			        case 81: // q
-			        	document.getElementById("q").style.color = "#00ADB5";
+			        	document.getElementById("gauche").style.color = "#00ADB5";
 			            break;
 			        case 69: // e
-			        	document.getElementById("e").style.color = "#00ADB5";
+			        	document.getElementById("descendre").style.color = "#00ADB5";
 			            break;
 			        case 65: // a
-			        	document.getElementById("a").style.color = "#00ADB5";
+			        	document.getElementById("monter").style.color = "#00ADB5";
 			            break;
 			        case 90: // z
-			        	document.getElementById("z").style.color = "#00ADB5";
+			        	document.getElementById("avancer").style.color = "#00ADB5";
 			            break;
 			        case 83: // s
-			        	document.getElementById("s").style.color = "#00ADB5";
+			        	document.getElementById("reculer").style.color = "#00ADB5";
 			            break;
 			    }
 			}
@@ -214,8 +214,8 @@
 
 		setInterval(function () {document.getElementById("fps").textContent = test.fps}.bind(this), 500);
 
-		//document.addEventListener("keydown",this.ReloadKey.bind(this));
-		//document.addEventListener("keyup",this.ReloadKey.bind(this));
+		document.addEventListener("keydown",this.ReloadKey.bind(this));
+		document.addEventListener("keyup",this.ReloadKey.bind(this));
 
 		document.getElementById('colorinput').addEventListener('change', function(e) {
 			document.querySelectorAll("p").forEach((p) => {
