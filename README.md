@@ -6,7 +6,7 @@ Demo par ici : https://real-intgine.insat.fr/
 Aspect mathématique : cf Projet_scientifique.pdf & le dossier image & https://en.wikipedia.org/wiki/3D_projection
 
 ## Ajouter le script
-Le seule script se trouve dans "source/real-intgine.js"
+Le seul script se trouve dans "source/real-intgine.js"
 ```html
 <canvas id="MyCanvas" width="1280" height="720"></canvas>
 <script src="real-intgine.js"></script>
